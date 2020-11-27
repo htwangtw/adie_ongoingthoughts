@@ -3,13 +3,27 @@
         "Description":"subject ID"
     },
     "group":{
-        "Description":"ASC or non-autistic control"
+        "Description":"Group within the project the participant belongs to",
+        "Levels": {
+            "patient": "autistic patients",
+            "healthy": "healthy sample, non-autistic controls"
+        }
     },
     "rct":{
-        "Description":"which RCT condition are they in. Non-autistic control should coded as NA"
+        "Description":"which RCT condition are they in. Only applicable to patient sample. Non-autistic control should coded as NA",
+        "Levels": {
+            "exterocpetion": "prosidy training; austistic control group",
+            "interocpetion": "adie training; autistic treatment group"
+        }
     },
     "session":{
-        "Description":"baseline, post training (coded as \u201cposttraining\u201d), 3 months follow up (3mf), or 1 year follow up (1yf)"
+        "Description":"session of data collection",
+        "Levels": {
+            "baseline": "baseline session",
+            "posttraining": "post training session",
+            "3mf": "follow up session after 3 months",
+            "1yf": "follow up session after 1 year"
+        }
     },
     "fmri":{
         "Description":"whether a participant completed the fMRI session [details of fMRI taskl]"
