@@ -71,6 +71,7 @@ for i in dataframes:
     # add  columns for dict keys 
     dfs_perprobe[i]['subnum'] = i[0]
     dfs_perprobe[i]['group'] = i[1]
+    print(i[1])
     dfs_perprobe[i]['ecg'] = i[2]
 
 # concatanate individual dataframes into one
@@ -85,6 +86,8 @@ df.replace('without_ECG', '0', inplace = True)
 
 df.to_csv('data/mw_data/processed_data/perprobe.csv', na_rep=np.nan, index=False)
 
+
+# TODO: PCA + zscore 
 
 
 
