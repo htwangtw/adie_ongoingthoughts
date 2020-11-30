@@ -68,6 +68,22 @@ dfs_perprobe = {}
 for i in dataframes:
     # Rearange dataframe so that row = probe, columns = question 
     dfs_perprobe[i] = dataframes[i].pivot(index = 'probe_nr', columns = 'mwtype', values = 'keyresp')
+    # add  columns for dict keys 
+    dfs_perprobe[i]['subnum'] = i[0]
+    dfs_perprobe[i]['group'] = i[1]
+    dfs_perprobe[i]['ecg'] = i[2]
+
+# concatanate individual dataframes into one
+
+df = pd.concat(dfs_perprobe, sort = True)
+
+# make ecg column binary 
+df.replace('with_ECG', '1', inplace = True)
+df.replace('without_ECG', '0', inplace = True)
+
+# save
+
+df.to_csv('data/mw_data/processed_data/perprobe.csv', na_rep=np.nan, index=False)
 
 
 
