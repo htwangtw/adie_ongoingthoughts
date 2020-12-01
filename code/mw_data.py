@@ -67,12 +67,24 @@ dfs_perprobe = {}
 
 for i in dataframes:
     # Rearange dataframe so that row = probe, columns = question 
-    dfs_perprobe[i] = dataframes[i].pivot(index = 'probe_nr', columns = 'mwtype', values = 'keyresp')
+    # omit values paramter to retain nback columns
+    dfs_perprobe[i] = dataframes[i].pivot(index = 'probe_nr', columns = 'mwtype') # values = 'keyresp')
+    # don't need qcount columns
+    dfs_perprobe[i] = dfs_perprobe[i][['nback','keyresp']] 
+    # This colummn contains all the info you needfor the nback column 
+    dfs_perprobe[i]['n_back'] = dfs_perprobe[i]['nback','Deliberate']
+    # Keep this newly created column and the key responses 
+    dfs_perprobe[i] = dfs_perprobe[i][['keyresp','n_back']]   
+    # remove level from column
+    dfs_perprobe[i].columns = dfs_perprobe[i].columns.droplevel()
+    # rename nback column due to droplevel removing the name 
+    dfs_perprobe[i].rename(columns={'':'nback'}, inplace=True)
     # add  columns for dict keys 
     dfs_perprobe[i]['subnum'] = i[0]
     dfs_perprobe[i]['group'] = i[1]
-    print(i[1])
     dfs_perprobe[i]['ecg'] = i[2]
+
+
 
 # concatanate individual dataframes into one
 
@@ -83,11 +95,8 @@ df.replace('with_ECG', '1', inplace = True)
 df.replace('without_ECG', '0', inplace = True)
 
 # save
-
 df.to_csv('data/mw_data/processed_data/perprobe.csv', na_rep=np.nan, index=False)
 
-
-# TODO: PCA + zscore 
 
 
 
