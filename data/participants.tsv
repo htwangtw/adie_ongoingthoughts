@@ -1,0 +1,543 @@
+participant_id 	group	rct	session	fmri	slowdot	mrimwq	nback	nbackECG	HBT	TT	HBD	prosody	multiinterval	BPQ	TAS_total	TAS_DDF	TAS_DIF	TAS_EOT	AQ	EQ	STAI_S	STAI_T	GAD-7	MAIA_Noticing	MAIA_NotDistracting	MAIA_NotWorrying	MAIA_AttentionRegulation	MAIA_EmotionalAwareness	MAIA_SelfRegulation	MAIA_BodyListening	MAIA_Trusting	PANAS_positive	PANAS_negative	PHQ9	UCLA_LS	UCLA_upset	GSQ_TOTAL	GSQ_Hyper	GSQ_Hypo
+ADIE001	patient	exterocpetion	baseline	0	0	0	1	0	1	0	1			0	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE001	patient	exterocpetion	posttraining	0	0	0	1	0	1	0	1			0	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE001	patient	exterocpetion	3mf											0							0	0	0																
+ADIE001	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE002	patient	interoception	baseline	0	0	0	1	0	1	0	1			0	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE002	patient	interoception	posttraining	0	0	0	1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE002	patient	interoception	3mf											1							1	1	1																
+ADIE002	patient	interoception	1yf				1	1	1	1	1			1	1	1	1	1	1	1	1	1	0	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE005	patient	interoception	baseline	1			1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0	0
+ADIE005	patient	interoception	posttraining	1			1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE005	patient	interoception	3mf											1							1	1	1																
+ADIE005	patient	interoception	1yf				1	1	0	0	0			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE006	patient	exterocpetion	baseline	0	0	0	1	0	1	0	1			0	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE006	patient	exterocpetion	posttraining	0	0	0	1	0	1	0	1			0	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE006	patient	exterocpetion	3mf											1							1	1	1																
+ADIE006	patient	exterocpetion	1yf				1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE007	patient	exterocpetion	baseline	0	0	0	1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0	0
+ADIE007	patient	exterocpetion	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE007	patient	exterocpetion	3mf											0							0	0	0																
+ADIE007	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE008	patient	exterocpetion	baseline	0	0	0	1	0	1	0	1			0	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE008	patient	exterocpetion	posttraining	0	0	0	1	0	1	0	1			0	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE008	patient	exterocpetion	3mf											1							1	1	0																
+ADIE008	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE012	patient	exterocpetion	baseline	0	0	0	1	0	1	0	1			0	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE012	patient	exterocpetion	posttraining	0	0	0	1	0	1	0	1			0	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE012	patient	exterocpetion	3mf											1							1	1	1																
+ADIE012	patient	exterocpetion	1yf				1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1	1	1	1	1
+ADIE015	patient	exterocpetion	baseline	0	0	0	1	0	1	0	1			0	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE015	patient	exterocpetion	posttraining	0	0	0	1	0	1	0	1			0	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE015	patient	exterocpetion	3mf											1							1	1	1																
+ADIE015	patient	exterocpetion	1yf				1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE018	patient	interoception	baseline	1			1	1	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE018	patient	interoception	posttraining	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE018	patient	interoception	3mf											0							0	0	0																
+ADIE018	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE019	patient	exterocpetion	baseline	0	0	0	1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE019	patient	exterocpetion	posttraining	0	0	0	1	0	0	0	0			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE019	patient	exterocpetion	3mf											1							1	1	1																
+ADIE019	patient	exterocpetion	1yf				1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE020	patient	exterocpetion	baseline	0	0	0	1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE020	patient	exterocpetion	posttraining	0	0	0	1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE020	patient	exterocpetion	3mf											1							1	1	1																
+ADIE020	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE027	patient	interoception	baseline	1			1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE027	patient	interoception	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE027	patient	interoception	3mf											0							0	0	0																
+ADIE027	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE028	patient	exterocpetion	baseline	0	0	0	1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0	0
+ADIE028	patient	exterocpetion	posttraining	0	0	0	1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE028	patient	exterocpetion	3mf											1							1	1	1																
+ADIE028	patient	exterocpetion	1yf				1	1	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE029	patient	exterocpetion	baseline	0	0	0	1	0	1	0	1			0	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE029	patient	exterocpetion	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE029	patient	exterocpetion	3mf											0							0	0	0																
+ADIE029	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE032	patient	exterocpetion	baseline	0	0	0	1	1	1	0	1			1	1	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE032	patient	exterocpetion	posttraining	0	0	0	1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE032	patient	exterocpetion	3mf											0							0	0	0																
+ADIE032	patient	exterocpetion	1yf				1	1	0	0	0			1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE034	patient	exterocpetion	baseline	0	0	0	1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0	0
+ADIE034	patient	exterocpetion	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE034	patient	exterocpetion	3mf											0							0	0	0																
+ADIE034	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE035	patient	exterocpetion	baseline	0	0	0	1	0	1	0	1			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE035	patient	exterocpetion	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE035	patient	exterocpetion	3mf											0							0	0	0																
+ADIE035	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE038	patient	exterocpetion	baseline	0	0	0	1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0	0
+ADIE038	patient	exterocpetion	posttraining	0	0	0	1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0	0	0
+ADIE038	patient	exterocpetion	3mf											1							1	1	1																
+ADIE038	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE040	patient	exterocpetion	baseline	0	0	0	1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0	0
+ADIE040	patient	exterocpetion	posttraining	0	0	0	1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0	0	0
+ADIE040	patient	exterocpetion	3mf											1							1	1	0																
+ADIE040	patient	exterocpetion	1yf				1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE041	patient	exterocpetion	baseline	0	0	0	1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE041	patient	exterocpetion	posttraining	0	0	0	1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE041	patient	exterocpetion	3mf											1							1	1	1																
+ADIE041	patient	exterocpetion	1yf				1	1	1	1	1			1	1	1	1	1	1	1	0	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE053	patient	exterocpetion	baseline	0	0	0	1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0	0
+ADIE053	patient	exterocpetion	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE053	patient	exterocpetion	3mf											0							0	0	0																
+ADIE053	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE058	patient	interoception	baseline	0	0	0	0	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE058	patient	interoception	posttraining	0	0	0	1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE058	patient	interoception	3mf											1							1	1	1																
+ADIE058	patient	interoception	1yf				1	1	1	1	1			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE073	patient	interoception	baseline	1			1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE073	patient	interoception	posttraining	1			1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	1	0	0	0	0	0
+ADIE073	patient	interoception	3mf											1							1	1	1																
+ADIE073	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE082	patient	interoception	baseline	1			0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE082	patient	interoception	posttraining	1			0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE082	patient	interoception	3mf											0							0	0	0																
+ADIE082	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE094	patient	interoception	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE094	patient	interoception	posttraining	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE094	patient	interoception	3mf											1							1	1	1																
+ADIE094	patient	interoception	1yf				1	1	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE106	patient	exterocpetion	baseline	0	0	0	0	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE106	patient	exterocpetion	posttraining	0	0	0	1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE106	patient	exterocpetion	3mf											0							0	0	0																
+ADIE106	patient	exterocpetion	1yf				1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE107	patient	exterocpetion	baseline	0	0	0	1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE107	patient	exterocpetion	posttraining	0	0	0	1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE107	patient	exterocpetion	3mf											1							1	1	1																
+ADIE107	patient	exterocpetion	1yf				1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE108	patient	interoception	baseline	1			1	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE108	patient	interoception	posttraining		0	0	1	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE108	patient	interoception	3mf											0							0	0	0																
+ADIE108	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE111	patient	exterocpetion	baseline	0	0	0	1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE111	patient	exterocpetion	posttraining	0	0	0	1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE111	patient	exterocpetion	3mf											1							1	1	1																
+ADIE111	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE113	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE113	patient	interoception	posttraining	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE113	patient	interoception	3mf											1							1	1	1																
+ADIE113	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE116	patient	interoception	baseline	1			0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE116	patient	interoception	posttraining	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1	1	1	1	1
+ADIE116	patient	interoception	3mf											1							1	1	1																
+ADIE116	patient	interoception	1yf	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE118	patient	interoception	baseline	1			1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE118	patient	interoception	posttraining	1			1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE118	patient	interoception	3mf											1							1	1	1																
+ADIE118	patient	interoception	1yf				1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE125	patient	interoception	baseline	0	0	0	1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE125	patient	interoception	posttraining	0	0	0	1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE125	patient	interoception	3mf											1							1	1	1																
+ADIE125	patient	interoception	1yf				1	1	0	0	0			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE126	patient	interoception	baseline	1			1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE126	patient	interoception	posttraining	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE126	patient	interoception	3mf											1							1	1	1																
+ADIE126	patient	interoception	1yf				1	1	0	0	0			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE129	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE129	patient	exterocpetion	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE129	patient	exterocpetion	3mf											0							0	0	0																
+ADIE129	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE131	patient	exterocpetion	baseline	0	0	0	1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE131	patient	exterocpetion	posttraining	0	0	0	1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE131	patient	exterocpetion	3mf											0							0	0	0																
+ADIE131	patient	exterocpetion	1yf				1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE135	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE135	patient	exterocpetion	posttraining	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE135	patient	exterocpetion	3mf											1							1	1	1																
+ADIE135	patient	exterocpetion	1yf				1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE138	patient	exterocpetion	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE138	patient	exterocpetion	posttraining	0	0	0	1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE138	patient	exterocpetion	3mf											1							1	1	1																
+ADIE138	patient	exterocpetion	1yf				1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE140	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0
+ADIE140	patient	interoception	posttraining	0	0	0	1	1	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE140	patient	interoception	3mf											0							0	0	0																
+ADIE140	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE141	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE141	patient	interoception	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE141	patient	interoception	3mf											0							0	0	0																
+ADIE141	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE143	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE143	patient	exterocpetion	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE143	patient	exterocpetion	3mf											1							1	1	1																
+ADIE143	patient	exterocpetion	1yf				1	1	0	0	0			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE144	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE144	patient	interoception	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE144	patient	interoception	3mf											0							0	0	0																
+ADIE144	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE145	patient	interoception	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE145	patient	interoception	posttraining	0	0	0	1	1	1	1	1			1	0	0	0	0	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE145	patient	interoception	3mf											0							0	0	0																
+ADIE145	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE147	patient	exterocpetion	baseline	0	0	0	1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE147	patient	exterocpetion	posttraining	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE147	patient	exterocpetion	3mf											0							0	0	0																
+ADIE147	patient	exterocpetion	1yf				0	0	0	0	0			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE148	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0	0	0
+ADIE148	patient	interoception	posttraining	1			1	1	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE148	patient	interoception	3mf											0							0	0	0																
+ADIE148	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE149	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE149	patient	interoception	posttraining	1			0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE149	patient	interoception	3mf											0							0	0	0																
+ADIE149	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE150	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE150	patient	exterocpetion	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE150	patient	exterocpetion	3mf											0							0	0	0																
+ADIE150	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE151	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE151	patient	exterocpetion	posttraining	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE151	patient	exterocpetion	3mf											0							0	0	0																
+ADIE151	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE152	patient	interoception	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE152	patient	interoception	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE152	patient	interoception	3mf											0							0	0	0																
+ADIE152	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE157	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE157	patient	interoception	posttraining	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE157	patient	interoception	3mf											1							1	1	1																
+ADIE157	patient	interoception	1yf				0	0	0	0	0			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE159	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE159	patient	exterocpetion	posttraining	0	0	0	1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE159	patient	exterocpetion	3mf											1							1	1	1																
+ADIE159	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE166	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE166	patient	interoception	posttraining	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE166	patient	interoception	3mf											1							1	1	1																
+ADIE166	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE169	patient	interoception	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE169	patient	interoception	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE169	patient	interoception	3mf											0							0	0	0																
+ADIE169	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE176	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE176	patient	exterocpetion	posttraining	0	0	0	0	0	1	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE176	patient	exterocpetion	3mf											0							0	0	0																
+ADIE176	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE177	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE177	patient	exterocpetion	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE177	patient	exterocpetion	3mf											0							0	0	0																
+ADIE177	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE178	patient	interoception	baseline	1			1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE178	patient	interoception	posttraining	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE178	patient	interoception	3mf											1							1	1	1																
+ADIE178	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE179	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE179	patient	interoception	posttraining	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE179	patient	interoception	3mf											0							0	0	0																
+ADIE179	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE180	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE180	patient	exterocpetion	posttraining	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	1	0	0	0	0	0
+ADIE180	patient	exterocpetion	3mf											1							1	1	1																
+ADIE180	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE184	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE184	patient	interoception	posttraining	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE184	patient	interoception	3mf											1							1	1	1																
+ADIE184	patient	interoception	1yf				0	0	0	0	0			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE185	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE185	patient	interoception	posttraining	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE185	patient	interoception	3mf											1							1	1	1																
+ADIE185	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE190	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE190	patient	exterocpetion	posttraining	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE190	patient	exterocpetion	3mf											0							0	0	0																
+ADIE190	patient	exterocpetion	1yf				0	0	0	0	0			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE194	patient	exterocpetion	baseline	0	0	0	1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE194	patient	exterocpetion	posttraining	0	0	0	1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0
+ADIE194	patient	exterocpetion	3mf											0							0	0	0																
+ADIE194	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE198	patient	interoception	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE198	patient	interoception	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE198	patient	interoception	3mf											1							1	1	1																
+ADIE198	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE199	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE199	patient	interoception	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE199	patient	interoception	3mf											1							1	1	1																
+ADIE199	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE200	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE200	patient	interoception	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE200	patient	interoception	3mf											0							0	0	0																
+ADIE200	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE203	patient	interoception	baseline	1			1	1	1	1	0			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE203	patient	interoception	posttraining	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE203	patient	interoception	3mf											0							0	0	0																
+ADIE203	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE207	patient	exterocpetion	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE207	patient	exterocpetion	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE207	patient	exterocpetion	3mf											0							0	0	0																
+ADIE207	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE211	patient	interoception	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0
+ADIE211	patient	interoception	posttraining	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE211	patient	interoception	3mf											0							0	0	0																
+ADIE211	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE212	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE212	patient	exterocpetion	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE212	patient	exterocpetion	3mf											0							0	0	0																
+ADIE212	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE214	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE214	patient	exterocpetion	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE214	patient	exterocpetion	3mf											0							0	0	0																
+ADIE214	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE217	patient	interoception	baseline	1			1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE217	patient	interoception	posttraining	1			0	0	0	0	0			1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE217	patient	interoception	3mf											1							1	1	1																
+ADIE217	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE220	patient	interoception	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE220	patient	interoception	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE220	patient	interoception	3mf											0							0	0	0																
+ADIE220	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE222	patient	exterocpetion	baseline	0	0	0	1	1	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE222	patient	exterocpetion	posttraining	0	0	0	1	1	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE222	patient	exterocpetion	3mf											0							0	0	0																
+ADIE222	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE224	patient	exterocpetion	baseline	0	0	0	1	1	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE224	patient	exterocpetion	posttraining	0	0	0	0	0	1	1	0			1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	1	1	1	1	1	1	1	1
+ADIE224	patient	exterocpetion	3mf											0							0	0	0																
+ADIE224	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE225	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE225	patient	interoception	posttraining	1			0	0	0	0	0			1	1	1	1	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE225	patient	interoception	3mf											0							0	0	0																
+ADIE225	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE227	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE227	patient	interoception	posttraining	1			0	0	1	1	1			1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	1	1	1	1	1	1	1	1
+ADIE227	patient	interoception	3mf											0							0	0	0																
+ADIE227	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE229	patient	exterocpetion	baseline	0	0	0	1	0	1	0	0			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	1	0	0	0	0	0
+ADIE229	patient	exterocpetion	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE229	patient	exterocpetion	3mf											0							0	0	0																
+ADIE229	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE234	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE234	patient	interoception	posttraining	1			0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE234	patient	interoception	3mf											1							1	1	1																
+ADIE234	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE235	patient	interoception	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0
+ADIE235	patient	interoception	posttraining	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE235	patient	interoception	3mf											1							1	1	1																
+ADIE235	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE238	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE238	patient	interoception	posttraining	1			1	1	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE238	patient	interoception	3mf											1							1	1	1																
+ADIE238	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE240	patient	interoception	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE240	patient	interoception	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE240	patient	interoception	3mf											1							1	1	1																
+ADIE240	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE242	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE242	patient	interoception	posttraining	1			1	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE242	patient	interoception	3mf											0							0	0	0																
+ADIE242	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE245	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE245	patient	exterocpetion	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE245	patient	exterocpetion	3mf											0							0	0	0																
+ADIE245	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE247	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE247	patient	interoception	posttraining	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE247	patient	interoception	3mf											1							1	1	1																
+ADIE247	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE251	patient	interoception	baseline	1			0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE251	patient	interoception	posttraining	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE251	patient	interoception	3mf											1							1	1	1																
+ADIE251	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE252	patient	interoception	baseline	0	0	0	1	1	1	1	1			1	0	0	0	0	0	1	0	1	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0
+ADIE252	patient	interoception	posttraining	0	0	0	0	0	0	0	0			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE252	patient	interoception	3mf											1							1	1	1																
+ADIE252	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE255	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE255	patient	exterocpetion	posttraining	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE255	patient	exterocpetion	3mf											1							1	1	1																
+ADIE255	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE256	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE256	patient	interoception	posttraining	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE256	patient	interoception	3mf											0							0	0	0																
+ADIE256	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE262	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE262	patient	interoception	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE262	patient	interoception	3mf											1							1	1	1																
+ADIE262	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE264	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE264	patient	interoception	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE264	patient	interoception	3mf											0							0	0	0																
+ADIE264	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE270	patient	exterocpetion	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE270	patient	exterocpetion	posttraining	0	0	0	0	0	1	1	1			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE270	patient	exterocpetion	3mf											1							1	1	1																
+ADIE270	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE272	patient	interoception	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE272	patient	interoception	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE272	patient	interoception	3mf											1							1	1	1																
+ADIE272	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE275	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE275	patient	exterocpetion	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE275	patient	exterocpetion	3mf											0							0	0	0																
+ADIE275	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE276	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE276	patient	exterocpetion	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE276	patient	exterocpetion	3mf											0							0	0	0																
+ADIE276	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE277	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE277	patient	interoception	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE277	patient	interoception	3mf											0							0	0	0																
+ADIE277	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE279	patient	exterocpetion	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE279	patient	exterocpetion	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE279	patient	exterocpetion	3mf											0							0	0	0																
+ADIE279	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE285	patient	interoception	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE285	patient	interoception	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE285	patient	interoception	3mf											1							1	1	1																
+ADIE285	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE286	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE286	patient	interoception	posttraining	1			0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE286	patient	interoception	3mf											1							1	1	1																
+ADIE286	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE287	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE287	patient	interoception	posttraining	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE287	patient	interoception	3mf											1							1	1	1																
+ADIE287	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE288	patient	interoception	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE288	patient	interoception	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE288	patient	interoception	3mf											1							1	1	1																
+ADIE288	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE291	patient	interoception	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE291	patient	interoception	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE291	patient	interoception	3mf											0							0	0	0																
+ADIE291	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE292	patient	exterocpetion	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE292	patient	exterocpetion	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE292	patient	exterocpetion	3mf											0							0	0	0																
+ADIE292	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE293	patient	exterocpetion	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE293	patient	exterocpetion	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	1	1	1	0	0	0	0	0
+ADIE293	patient	exterocpetion	3mf											1							1	1	1																
+ADIE293	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE294	patient	interoception	baseline	1			1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE294	patient	interoception	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE294	patient	interoception	3mf											0							0	0	0																
+ADIE294	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE296	patient	exterocpetion	baseline	0	0	0	1	1	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE296	patient	exterocpetion	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE296	patient	exterocpetion	3mf											0							0	0	0																
+ADIE296	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE298	patient	exterocpetion	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE298	patient	exterocpetion	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE298	patient	exterocpetion	3mf											1							1	1	1																
+ADIE298	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE299	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE299	patient	exterocpetion	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE299	patient	exterocpetion	3mf											0							0	0	0																
+ADIE299	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE303	patient	interoception	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE303	patient	interoception	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE303	patient	interoception	3mf											1							1	1	1																
+ADIE303	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE306	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE306	patient	exterocpetion	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE306	patient	exterocpetion	3mf											0							0	0	0																
+ADIE306	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE311	patient	interoception	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE311	patient	interoception	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE311	patient	interoception	3mf											1							1	1	1																
+ADIE311	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE315	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE315	patient	exterocpetion	posttraining	0	0	0	0	0	1	0	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE315	patient	exterocpetion	3mf											1							1	1	1																
+ADIE315	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE316	patient	interoception	baseline	1			0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE316	patient	interoception	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE316	patient	interoception	3mf											1							1	1	1																
+ADIE316	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE322	patient	exterocpetion	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE322	patient	exterocpetion	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE322	patient	exterocpetion	3mf											0							0	0	0																
+ADIE322	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE326	patient	exterocpetion	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE326	patient	exterocpetion	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE326	patient	exterocpetion	3mf											0							0	0	0																
+ADIE326	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE327	patient	interoception	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE327	patient	interoception	posttraining	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE327	patient	interoception	3mf											1							1	1	1																
+ADIE327	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE328	patient	exterocpetion	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE328	patient	exterocpetion	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1	1
+ADIE328	patient	exterocpetion	3mf											1							1	1	1																
+ADIE328	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE330	patient	exterocpetion	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	0	0	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE330	patient	exterocpetion	posttraining	0	0	0	0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE330	patient	exterocpetion	3mf											0							0	0	0																
+ADIE330	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE331	patient	exterocpetion	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE331	patient	exterocpetion	posttraining	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE331	patient	exterocpetion	3mf											1							1	1	1																
+ADIE331	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE332	patient	exterocpetion	baseline	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE332	patient	exterocpetion	posttraining	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE332	patient	exterocpetion	3mf											1							1	1	1																
+ADIE332	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE333	patient	exterocpetion	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE333	patient	exterocpetion	posttraining	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE333	patient	exterocpetion	3mf											0							0	0	0																
+ADIE333	patient	exterocpetion	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ADIE339	patient	interoception	baseline	0	0	0	0	0	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE339	patient	interoception	posttraining	0	0	0	1	1	1	1	1			1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+ADIE339	patient	interoception	3mf											1							1	1	1																
+ADIE339	patient	interoception	1yf				0	0	0	0	0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+CONADIE001	healthy	NA	baseline	1																																			
+CONADIE002	healthy	NA	baseline	1																																			
+CONADIE003	healthy	NA	baseline	1																																			
+CONADIE004	healthy	NA	baseline	1																																			
+CONADIE005	healthy	NA	baseline	1																																			
+CONADIE008	healthy	NA	baseline	1																																			
+CONADIE009	healthy	NA	baseline	1																																			
+CONADIE010	healthy	NA	baseline	1																																			
+CONADIE011	healthy	NA	baseline	1																																			
+CONADIE012	healthy	NA	baseline	1																																			
+CONADIE013	healthy	NA	baseline	1																																			
+CONADIE014	healthy	NA	baseline	1																																			
+CONADIE015	healthy	NA	baseline	1																																			
+CONADIE016	healthy	NA	baseline	1																																			
+CONADIE017	healthy	NA	baseline	1																																			
+CONADIE018	healthy	NA	baseline	1																																			
+CONADIE019	healthy	NA	baseline	0	0	0																																	
+CONADIE020	healthy	NA	baseline	1																																			
+CONADIE021	healthy	NA	baseline	1																																			
+CONADIE022	healthy	NA	baseline	1																																			
+CONADIE023	healthy	NA	baseline	1																																			
+CONADIE024	healthy	NA	baseline	1																																			
+CONADIE025	healthy	NA	baseline	1																																			
+CONADIE026	healthy	NA	baseline	1																																			
+CONADIE027	healthy	NA	baseline	1																																			
+CONADIE028	healthy	NA	baseline	0	0	0																																	
+CONADIE029	healthy	NA	baseline	1																																			
+CONADIE030	healthy	NA	baseline	1																																			
+CONADIE032	healthy	NA	baseline	1																																			
+CONADIE033	healthy	NA	baseline	1																																			
+CONADIE034	healthy	NA	baseline	0	0	0																																	
+CONADIE035	healthy	NA	baseline	1																																			
+CONADIE036	healthy	NA	baseline	1																																			
+CONADIE037	healthy	NA	baseline	1																																			
+CONADIE038	healthy	NA	baseline	1																																			
+CONADIE039	healthy	NA	baseline	1																																			
+CONADIE040	healthy	NA	baseline	1																																			
+CONADIE041	healthy	NA	baseline	1																																			
+CONADIE042	healthy	NA	baseline	1																																			
+CONADIE043	healthy	NA	baseline	1																																			
+CONADIE044	healthy	NA	baseline	1																																			
+CONADIE045	healthy	NA	baseline	1																																			
+CONADIE046	healthy	NA	baseline	1																																			
+CONADIE047	healthy	NA	baseline	1																																			
+CONADIE048	healthy	NA	baseline	1																																			
+CONADIE050	healthy	NA	baseline	1																																			
+CONADIE051	healthy	NA	baseline	1																																			
+CONADIE052	healthy	NA	baseline	1																																			
+CONADIE060	healthy	NA	baseline	1																																			
+CONADIE061	healthy	NA	baseline	0	0	0																																	
+CONADIE062	healthy	NA	baseline	0	0	0																																	
+CONADIE063	healthy	NA	baseline	0	0	0																																	
+CONADIE064	healthy	NA	baseline	0	0	0																																	
+CONADIE065	healthy	NA	baseline	0	0	0																																	
+CONADIE066	healthy	NA	baseline	0	0	0																																	
+CONADIE067	healthy	NA	baseline	0	0	0																																	
+CONADIE068	healthy	NA	baseline	0	0	0																																	
+CONADIE069	healthy	NA	baseline	0	0	0																																	

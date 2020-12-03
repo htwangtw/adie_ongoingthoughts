@@ -1,2 +1,3 @@
-# adie_ongoingthoughts
-ADIE ongoing thought related analysis plan
+# ADIE ongoing thought analysis
+
+Authors: Hao-Ting Wang, Will Strawson
