@@ -15,9 +15,8 @@ script:
     - pytest
 branches:
   only:
-   - master
+   - main
    - dev
-   - add_ci
 after_success:
     - coveralls
 notifications:
