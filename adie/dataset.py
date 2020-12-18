@@ -66,21 +66,31 @@ def convert_beh(original: Path, target: Path,
     return target / target_file
 
 
-def save_physio(filename: Path or str, basename: str,
-                signal_info: list, signals: list) -> path:
+def name_physiobids(basename: str, label: str, signal_info: list) -> list:
+    names = []
+    for d in signal_info:
+        recording = d["Columns"][0]
+        if recording in physio_labels:
+            suffix = "physio"
+            physio_basename = f"{basename}_task-{label}_recording-{recording}_{suffix}"
+        else:
+            suffix = "stim"
+            physio_basename = f"{basename}_task-{label}_{suffix}"
+        names.append(physio_basename)
+    return names
+
+
+def save_physio(target: Path, bidsnames: list,
+                signal_info: list, signals: list) -> list:
     """
     save converted spike physio data to BIDS spec beh file
     """
-    if filename is Path:
-        filename = str(filename)
+    saved = []
+    for n, d, s in zip(bidsnames, signal_info, signals):
+        s = pd.DataFrame(s, index=None, columns=d["Columns"])
+        s.to_csv(target / f"{n}.tsv.gz", sep="\t", compression="gzip")
+        with open(target / f"{n}.json", 'w') as f:
+                json.dump(d, f, indent=2)
+        saved.append(str(target / f"{n}"))
 
-    for d, s in zip(signal_info, signals):
-        recording = signal_info["Columns"][0]
-        if recording in physio_labels:
-            suffix = "physio"
-            physio_basename = f"{base_name}_task-{label}_recording-{recording}_{suffix}"
-        else:
-            suffix = "stim"
-            physio_basename = f"{base_name}_task-{label}_{suffix}"
-        # save signal (`s`) into tsv, compressed
-        # save dict (`d`) into json
+    return saved

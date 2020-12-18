@@ -6,7 +6,7 @@ import numpy as np
 
 from neo.io import Spike2IO
 
-def smr2array(filename: str) -> (list(dict), list(np.ndarray)):
+def smr2array(filename: str) -> (list, list):
     """
     helper function to read signal from .smr file (Spike2) for the current task
     This function will have to be modified at a project by project basis
@@ -25,6 +25,8 @@ def smr2array(filename: str) -> (list(dict), list(np.ndarray)):
                         "StartTime": 0.0,
                         "Columns": []}
         signal = ac.as_array()
+        # if signal.shape[0] > signal.shape[1]:
+        #     signal = signal.reshape((signal.shape[1], signal.shape[0]))
         signal_dict["Columns"].append(ac.name.lower())
         signal_dict[ac.name] = {"Unit": "arbitrary"}
 

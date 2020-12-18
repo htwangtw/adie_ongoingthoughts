@@ -1,10 +1,23 @@
-from adie.dataset import parseinfo, gen_bidsbeh, convert_beh
+from adie.dataset import *
 
 from pathlib import Path
 import io
+import numpy as np
 
 
 bidsroot = Path(__file__).parent / "data/bids_test"
+signal_info = [{"SamplingFrequency": 100,
+                "StartTime": 0.0,
+                "Columns": ["ecg"],
+                "ecg": {"Unit": "unknown"}
+                },
+                {"SamplingFrequency": 100,
+                "StartTime": 0.0,
+                "Columns": ["stim"],
+                "stim": {"Unit": "unknown"}}
+                ]
+signals = [np.array([34, 45, 23]), np.array([34, 45, 23])]
+
 
 def test_pasreinfo():
     sub, ses, group = parseinfo("CONADIE983")
@@ -45,3 +58,18 @@ def test_conver_beh(tmpdir):
                             "sub-ADIE983_ses-baseline", "mytask")
     assert saved_loc == tmpdir / "sub-ADIE983_ses-baseline_task-mytask_beh.tsv"
 
+def test_name_physiobids():
+    names = name_physiobids("sub-ADIE983_ses-baseline",
+                            "mytask", signal_info)
+    assert len(names) == len(signal_info)
+    assert names[0] == "sub-ADIE983_ses-baseline_task-mytask_recording-ecg_physio"
+    assert names[1] == "sub-ADIE983_ses-baseline_task-mytask_stim"
+
+def test_save_physio(tmpdir):
+    bidsnames = name_physiobids("sub-ADIE983_ses-baseline",
+                            "mytask", signal_info)
+    saved = save_physio(tmpdir, bidsnames,
+                        signal_info, signals)
+    assert len(saved) == len(bidsnames)
+    assert saved[0] == str(tmpdir / bidsnames[0])
+    assert saved[1] == str(tmpdir / bidsnames[1])
