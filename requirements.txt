@@ -1,0 +1,5 @@
+matplotlib       3.3.x
+neo              0.9.x
+numpy            1.19.x
+pandas           1.1.x
+scipy            1.5.x

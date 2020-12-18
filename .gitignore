@@ -1,6 +1,6 @@
 # project
-data/sub-*
-data/derivatives
+data/**/sub-*
+data/derivatives/**/*.tsv
 data/sourcedata
 
 # Byte-compiled / optimized / DLL files

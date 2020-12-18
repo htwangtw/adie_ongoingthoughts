@@ -1,0 +1,625 @@
+{
+    "ID2": {
+        "Descriptions": null
+    },
+    "Intervention": {
+        "Descriptions": null,
+        "Levels": {
+            "0": "prosody",
+            "1": "interoception"
+        }
+    },
+    "Intero_Completion": {
+        "Descriptions": null
+    },
+    "PrimOut": {
+        "Descriptions": null
+    },
+    "Compliance": {
+        "Descriptions": null
+    },
+    "Dropout": {
+        "Descriptions": null
+    },
+    "Age": {
+        "Descriptions": null
+    },
+    "Site": {
+        "Descriptions": null,
+        "Levels": {
+            "0": "Brighton",
+            "1": "London",
+            "2": "Chichester",
+            "3": "Hastings",
+            "4": "Harrow"
+        }
+    },
+    "PriorDx": {
+        "Descriptions": null
+    },
+    "AnxietyDx": {
+        "Descriptions": null
+    },
+    "DepressionDx": {
+        "Descriptions": null
+    },
+    "ADHD": {
+        "Descriptions": null
+    },
+    "OCD": {
+        "Descriptions": null
+    },
+    "PTSD": {
+        "Descriptions": null
+    },
+    "CPTSD": {
+        "Descriptions": null
+    },
+    "Dyspraxia": {
+        "Descriptions": null
+    },
+    "Dyslexia": {
+        "Descriptions": null
+    },
+    "EatingDisorder": {
+        "Descriptions": null
+    },
+    "MINIDx": {
+        "Descriptions": null
+    },
+    "MINIASCDx": {
+        "Descriptions": null
+    },
+    "MINIYes": {
+        "Descriptions": null
+    },
+    "GenderID": {
+        "Descriptions": null
+    },
+    "GenderBirth": {
+        "Descriptions": null
+    },
+    "GenderFit": {
+        "Descriptions": null
+    },
+    "Height": {
+        "Descriptions": null
+    },
+    "Weight": {
+        "Descriptions": null
+    },
+    "Nationality": {
+        "Descriptions": null
+    },
+    "Education": {
+        "Descriptions": null,
+        "Levels": {
+            "0": "GCSE or similar",
+            "1": "A-levels or similar",
+            "2": "attended Uni/college but no degree",
+            "3": "Undergraduate degree",
+            "4": "Graduate degree"
+        }
+    },
+    "Medication": {
+        "Descriptions": null
+    },
+    "Handedness": {
+        "Descriptions": null,
+        "Levels": {
+            "0": "right",
+            "1": "left",
+            "2": "ambidextrous"
+        }
+    },
+    "BL_BPQ": {
+        "Descriptions": null
+    },
+    "BL_TAS_total": {
+        "Descriptions": null
+    },
+    "BL_TAS_DDF": {
+        "Descriptions": null
+    },
+    "BL_TAS_DIF": {
+        "Descriptions": null
+    },
+    "BL_TAS_EOT": {
+        "Descriptions": null
+    },
+    "BL_AQ": {
+        "Descriptions": null
+    },
+    "BL_EQ": {
+        "Descriptions": null
+    },
+    "BL_STAI_S": {
+        "Descriptions": null
+    },
+    "BL_STAI_T": {
+        "Descriptions": null
+    },
+    "BL_GAD7": {
+        "Descriptions": null
+    },
+    "BL_MAIA_Noticing": {
+        "Descriptions": null
+    },
+    "BL_MAIA_NotDistracting": {
+        "Descriptions": null
+    },
+    "BL_MAIA_NotWorrying": {
+        "Descriptions": null
+    },
+    "BL_MAIA_AttentionRegulation": {
+        "Descriptions": null
+    },
+    "BL_MAIA_EmotionalAwareness": {
+        "Descriptions": null
+    },
+    "BL_MAIA_SelfRegulation": {
+        "Descriptions": null
+    },
+    "BL_MAIA_BodyListening": {
+        "Descriptions": null
+    },
+    "BL_MAIA_Trusting": {
+        "Descriptions": null
+    },
+    "BL_PANAS_positive": {
+        "Descriptions": null
+    },
+    "BL_PANAS_negative": {
+        "Descriptions": null
+    },
+    "BL_PHQ9": {
+        "Descriptions": null
+    },
+    "BL_UCLA_LS": {
+        "Descriptions": null
+    },
+    "BL_UCLA_upset": {
+        "Descriptions": null
+    },
+    "BL_GSQ_TOTAL": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Hyper": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Hypo": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Visual_Hyper": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Visual_Hypo": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Visual_Total": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Auditory_Hyper": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Auditory_Hypo": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Auditory_Toal": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Gustatory_Hyper": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Gustatory_Hypo": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Gustatory_Total": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Olfactory_Hyper": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Olfactory_Hypo": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Olfactory_Total": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Tactile_Hyper": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Tactile_Hypo": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Tactile_Total": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Vestibular_Hyper": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Vestibular_Hypo": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Vestibular_Total": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Proprioception_Hyper": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Proprioception_Hypo": {
+        "Descriptions": null
+    },
+    "BL_GSQ_Proprioception_Total": {
+        "Descriptions": null
+    },
+    "BL_Track_meanacc": {
+        "Descriptions": null
+    },
+    "BL_Track_RHO": {
+        "Descriptions": null
+    },
+    "BL_Track_meanconf": {
+        "Descriptions": null
+    },
+    "BL_Time_meanacc": {
+        "Descriptions": null
+    },
+    "BL_Time_RHO": {
+        "Descriptions": null
+    },
+    "BL_Time_meanconf": {
+        "Descriptions": null
+    },
+    "BL_Disc_meanacc": {
+        "Descriptions": null
+    },
+    "BL_Disc_ROC": {
+        "Descriptions": null
+    },
+    "BL_Disc_meanconf": {
+        "Descriptions": null
+    },
+    "BL_d_prime": {
+        "Descriptions": null
+    },
+    "BL_C": {
+        "Descriptions": null
+    },
+    "BL_ITPE_T": {
+        "Descriptions": null
+    },
+    "BL_ITPE_D": {
+        "Descriptions": null
+    },
+    "BL_prosody_acc": {
+        "Descriptions": null
+    },
+    "BL_face_acc": {
+        "Descriptions": null
+    },
+    "BL_face_with_text_acc": {
+        "Descriptions": null
+    },
+    "BL_text_acc": {
+        "Descriptions": null
+    },
+    "BL_percent_positive": {
+        "Descriptions": null
+    },
+    "BL_percent_negative": {
+        "Descriptions": null
+    },
+    "BL_percent_positive_face": {
+        "Descriptions": null
+    },
+    "BL_percent_negative_face": {
+        "Descriptions": null
+    },
+    "BL_FaceAndext_Acc_Positive": {
+        "Descriptions": null
+    },
+    "BL_FaceandText_Acc_Negative": {
+        "Descriptions": null
+    },
+    "BL_Text_Acc_Positive": {
+        "Descriptions": null
+    },
+    "BL_Text_Acc_Negative": {
+        "Descriptions": null
+    },
+    "BL_Basic_emotions": {
+        "Descriptions": null
+    },
+    "BL_complex_emotions": {
+        "Descriptions": null
+    },
+    "BL_Basic_face_acc": {
+        "Descriptions": null
+    },
+    "BL_complex_face_acc": {
+        "Descriptions": null
+    },
+    "BL_basic_FaceAndText_Acc": {
+        "Descriptions": null
+    },
+    "BL_Complex_FaceAndText_ACC": {
+        "Descriptions": null
+    },
+    "BL_basic_text_acc": {
+        "Descriptions": null
+    },
+    "BL_complex_text_acc": {
+        "Descriptions": null
+    },
+    "F_BPQ": {
+        "Descriptions": null
+    },
+    "F_TAS_total": {
+        "Descriptions": null
+    },
+    "F_TAS_DDF": {
+        "Descriptions": null
+    },
+    "F_TAS_DIF": {
+        "Descriptions": null
+    },
+    "F_TAS_EOT": {
+        "Descriptions": null
+    },
+    "F_AQ": {
+        "Descriptions": null
+    },
+    "F_EQ": {
+        "Descriptions": null
+    },
+    "F_STAI_S": {
+        "Descriptions": null
+    },
+    "F_STAI_T": {
+        "Descriptions": null
+    },
+    "F_GAD7": {
+        "Descriptions": null
+    },
+    "F_MAIA_Noticing": {
+        "Descriptions": null
+    },
+    "F_MAIA_NotDistracting": {
+        "Descriptions": null
+    },
+    "F_MAIA_NotWorrying": {
+        "Descriptions": null
+    },
+    "F_MAIA_AttentionRegulation": {
+        "Descriptions": null
+    },
+    "F_MAIA_EmotionalAwareness": {
+        "Descriptions": null
+    },
+    "F_MAIA_SelfRegulation": {
+        "Descriptions": null
+    },
+    "F_MAIA_BodyListening": {
+        "Descriptions": null
+    },
+    "F_MAIA_Trusting": {
+        "Descriptions": null
+    },
+    "F_PANAS_positive": {
+        "Descriptions": null
+    },
+    "F_PANAS_negative": {
+        "Descriptions": null
+    },
+    "F_PHQ9": {
+        "Descriptions": null
+    },
+    "F_UCLA_LS": {
+        "Descriptions": null
+    },
+    "F_UCLA_upset": {
+        "Descriptions": null
+    },
+    "F_GSQ_TOTAL": {
+        "Descriptions": null
+    },
+    "F_GSQ_Hyper": {
+        "Descriptions": null
+    },
+    "F_GSQ_Hypo": {
+        "Descriptions": null
+    },
+    "F_Track_meanacc": {
+        "Descriptions": null
+    },
+    "F_Track_RHO": {
+        "Descriptions": null
+    },
+    "F_Track_meanconf": {
+        "Descriptions": null
+    },
+    "F_Time_meanacc": {
+        "Descriptions": null
+    },
+    "F_Time_RHO": {
+        "Descriptions": null
+    },
+    "F_Time_meanconf": {
+        "Descriptions": null
+    },
+    "F_Disc_meanacc": {
+        "Descriptions": null
+    },
+    "F_Disc_ROC": {
+        "Descriptions": null
+    },
+    "F_Disc_meanconf": {
+        "Descriptions": null
+    },
+    "F_d_prime": {
+        "Descriptions": null
+    },
+    "F_C": {
+        "Descriptions": null
+    },
+    "F_ITPE_T": {
+        "Descriptions": null
+    },
+    "F_ITPE_D": {
+        "Descriptions": null
+    },
+    "f_ID_repeat": {
+        "Descriptions": null
+    },
+    "F_prosody_acc_percent": {
+        "Descriptions": null
+    },
+    "F_face_percent": {
+        "Descriptions": null
+    },
+    "F_face_and_text_percent": {
+        "Descriptions": null
+    },
+    "F_text_percent": {
+        "Descriptions": null
+    },
+    "F_positive_percent": {
+        "Descriptions": null
+    },
+    "F_negative_percent": {
+        "Descriptions": null
+    },
+    "F_positive_face_percent": {
+        "Descriptions": null
+    },
+    "F_negative_face_percent": {
+        "Descriptions": null
+    },
+    "F_positive_face_and_text_percent": {
+        "Descriptions": null
+    },
+    "F_negative_face_and_text_percent": {
+        "Descriptions": null
+    },
+    "F_positive_text_percent": {
+        "Descriptions": null
+    },
+    "F_negative_text_percent": {
+        "Descriptions": null
+    },
+    "F_basic_emotions_percent": {
+        "Descriptions": null
+    },
+    "F_complex_emotions_percent": {
+        "Descriptions": null
+    },
+    "F_basic_face_percent": {
+        "Descriptions": null
+    },
+    "F_complex_face_percent": {
+        "Descriptions": null
+    },
+    "F_basic_face_and_text_percent": {
+        "Descriptions": null
+    },
+    "F_complex_face_and_text_percent": {
+        "Descriptions": null
+    },
+    "F_basic_text": {
+        "Descriptions": null
+    },
+    "F_complex_text": {
+        "Descriptions": null
+    },
+    "BPQ_3mf": {
+        "Descriptions": null
+    },
+    "STAI_S_3mf": {
+        "Descriptions": null
+    },
+    "STAI_T_3mf": {
+        "Descriptions": null
+    },
+    "GAD7_3mf": {
+        "Descriptions": null
+    },
+    "CS_trait_BLF": {
+        "Descriptions": null
+    },
+    "CS_state_BLF": {
+        "Descriptions": null
+    },
+    "CS_trackacc_BLF": {
+        "Descriptions": null
+    },
+    "CS_discacc_BLF": {
+        "Descriptions": null
+    },
+    "CS_trackRHO_BLF": {
+        "Descriptions": null
+    },
+    "CS_tracksens_BLF": {
+        "Descriptions": null
+    },
+    "CS_ROC_BLF": {
+        "Descriptions": null
+    },
+    "CS_dprime_BLF": {
+        "Descriptions": null
+    },
+    "CS_C_BLF": {
+        "Descriptions": null
+    },
+    "CS_GAD7_BLF": {
+        "Descriptions": null
+    },
+    "CS_PHQ9_BLF": {
+        "Descriptions": null
+    },
+    "CS_TASTotal_BLF": {
+        "Descriptions": null
+    },
+    "CS_TASDDF_BLF": {
+        "Descriptions": null
+    },
+    "CS_TASDIF_BLF": {
+        "Descriptions": null
+    },
+    "CS_TASEOT_BLF": {
+        "Descriptions": null
+    },
+    "CS_trait_BLFU": {
+        "Descriptions": null
+    },
+    "CS_Noticing_BLF": {
+        "Descriptions": null
+    },
+    "CS_NotDistr_BLF": {
+        "Descriptions": null
+    },
+    "CS_AttReg_BLF": {
+        "Descriptions": null
+    },
+    "CS_EmoAwa_BLF": {
+        "Descriptions": null
+    },
+    "CS_SelfReg_BLF": {
+        "Descriptions": null
+    },
+    "CS_BodyList_BLF": {
+        "Descriptions": null
+    },
+    "CS_Trust_BLF": {
+        "Descriptions": null
+    },
+    "CS_ITPE_T": {
+        "Descriptions": null
+    },
+    "CS_ITPE_D": {
+        "Descriptions": null
+    },
+    "CS_BPQ": {
+        "Descriptions": null
+    }
+}
