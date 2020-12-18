@@ -2,6 +2,8 @@
 
 Authors: Hao-Ting Wang, Will Strawson
 
+Last updated: 18-12-2020
+
 ## setup
 Environment for this project uses Python >= 3.8.
 ```
