@@ -1,5 +1,5 @@
-matplotlib       3.3.x
-neo              0.9.x
-numpy            1.19.x
-pandas           1.1.x
-scipy            1.5.x
+matplotlib>=3.2.0
+neo==0.9.0
+numpy>=1.14
+pandas>=1.1.4
+scipy>=1.5.0
