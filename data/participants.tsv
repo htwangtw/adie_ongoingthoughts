@@ -1,4 +1,4 @@
-particpant_id	session	group	task_nbackexpsampling	physio_nbackexpsampling
+participant_id	session	group	task_nbackexpsampling	physio_nbackexpsampling
 ADIE001	baseline	patient	1	0
 ADIE001	3mf	patient	1	0
 ADIE002	baseline	patient	1	0
@@ -187,3 +187,4 @@ CONADIE066	baseline	control	1	0
 CONADIE067	baseline	control	1	0
 CONADIE068	baseline	control	1	0
 CONADIE069	baseline	control	1	0
+			188	95
