@@ -9,10 +9,10 @@ python:
 install:
     - pip install -r dev-requirements.txt
     - pip install .
-    - pip install pytest-cov codecov
+    - pip install pytest-cov
 # command to run tests
 script:
-   - pytest --cov=codecov
+   - pytest --cov=./
 branches:
   only:
    - main
