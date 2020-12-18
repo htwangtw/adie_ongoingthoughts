@@ -19,6 +19,7 @@ branches:
    - dev
 after_success:
     - coveralls
+
 notifications:
   email:
     recipients:
