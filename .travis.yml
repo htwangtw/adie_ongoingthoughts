@@ -25,3 +25,6 @@ notifications:
       - htwangtw@gmail.com
     on_success: always
     on_failure: always
+
+after_script:
+    - bash <(curl -s https://codecov.io/bash)
