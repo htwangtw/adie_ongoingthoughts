@@ -1,4 +1,5 @@
 [![Build Status](https://www.travis-ci.com/htwangtw/adie_ongoingthoughts.svg?branch=main)](https://www.travis-ci.com/htwangtw/adie_ongoingthoughts)
+[![codecov](https://codecov.io/gh/htwangtw/adie_ongoingthoughts/branch/main/graph/badge.svg?token=TM50FG36GZ)](https://codecov.io/gh/htwangtw/adie_ongoingthoughts)
 
 # ADIE ongoing thought analysis
 
