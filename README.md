@@ -1,3 +1,5 @@
+[![Build Status](https://www.travis-ci.com/htwangtw/adie_ongoingthoughts.svg?branch=main)](https://www.travis-ci.com/htwangtw/adie_ongoingthoughts)
+
 # ADIE ongoing thought analysis
 
 Authors: Hao-Ting Wang, Will Strawson
