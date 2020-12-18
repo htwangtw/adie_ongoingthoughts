@@ -12,13 +12,14 @@ install:
     - pip install pytest-cov
 # command to run tests
 script:
-    - pytest
+   - pytest --cov=codecov
 branches:
   only:
    - main
    - dev
 after_success:
     - coveralls
+    - bash <(curl -s https://codecov.io/bash)
 
 notifications:
   email:
@@ -26,6 +27,3 @@ notifications:
       - htwangtw@gmail.com
     on_success: always
     on_failure: always
-
-after_script:
-    - bash <(curl -s https://codecov.io/bash)
