@@ -1,0 +1,28 @@
+
+language: python
+# python versions to use during the tests
+python:
+  - "3.7"
+  - "3.8"
+  - "3.9"
+# command to install dependencies
+install:
+    - pip install -r dev-requirements.txt
+    - pip install .
+    - pip install pytest-cov
+# command to run tests
+script:
+    - pytest
+branches:
+  only:
+   - master
+   - dev
+   - add_ci
+after_success:
+    - coveralls
+notifications:
+  email:
+    recipients:
+      - htwangtw@gmail.com
+    on_success: always
+    on_failure: always
