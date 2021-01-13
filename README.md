@@ -8,13 +8,19 @@ Authors: Hao-Ting Wang, Will Strawson
 Last updated: 18-12-2020
 
 ## setup
-Environment for this project uses Python >= 3.8.
+Environment was tested in Linux with Python >= 3.7.
+
+We recommend running the project in a virtual environment. 
 ```
 virtualenv env -p /path/to/bin/python3.8
 pip install -i requirements.txt
+
+# install ADIE data analysis aid
+python setup.py
 ```
 For developers:
 ```
 virtualenv env -p /path/to/bin/python3.8
 pip install -i dev-requirements.txt
+python setup.py
 ```
