@@ -1,0 +1,30 @@
+{
+  "Name": "Aligning Dimensions of Interoceptive Experience (ADIE)",
+  "BIDSVersion": "1.4.1",
+  "DatasetType": "raw",
+  "License": "cc-by-nc-4.0",
+  "Authors": [
+    "Lisa Quadt",
+    "James Mulcahy",
+    "Hao-Ting Wang",
+    "Will Strawson",
+    "Sarah Garfinkel",
+    "Hugo Critchley"
+  ],
+  "Acknowledgements": "Special thanks to Hao-Ting Wang and Will Strawson for help in formatting this dataset in BIDS. We thank Lisa Quadt for writing the research protocol and others involved in project management: co-investigators Clara Strauss, Yoko Nagai, and Sarah Garfinkel; trial statistican Anna-Marie Jones; clinical research coordinator Charmaine Kohn. We thank Lisa Quadt, James Mulcahy, and Dennis Larson for maintaining the behavioural testing equipments and research data collection. We thanks Clinical Imaging Science Centre for MRI scanning and data hosting. This study is a collabration between Sussex Partnership NHS Foundation Trust and Brighton and Sussex Medical School (PI: Hugo Critchley).",
+  "HowToAcknowledge": "Please cite this paper: link to paper",
+  "Funding": [
+    "MQ: Transforming Mental Health",
+    "Sussex Partnership NHS Foundation Trust "
+  ],
+  "EthicsApprovals": [
+    "ISRCTN 14848787"
+    "Health Research Authority (HRA), 31/03/2017, ref: 17/WM/0125 ",
+    "NHS Research Ethics Committee"
+  ],
+  "ReferencesAndLinks": [
+    "https://link/to/stuff",
+    "APA paper reference"
+  ],
+  "HEDVersion": "N/A"
+}

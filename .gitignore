@@ -1,7 +1,8 @@
 # project
 data/**/sub-*
 data/derivatives/**/*.tsv
-data/sourcedata
+data/phenotype/*.tsv
+data/sourcedata/
 data/participants.tsv
 
 # Byte-compiled / optimized / DLL files

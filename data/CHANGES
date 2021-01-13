@@ -1,5 +1,11 @@
-Revision history for ADIE dataset
+0.0.2 2021-01-13
+
+  - Updated nback mindandering source data and recompiled.
+  - Completed dataset_description.json.
+  - Add phenotype data for patient group.
+  - Add README to `sourcedata`.
+  - Update main README with BIDS references.
 
 0.0.1 2020-12-18
 
-  - Compiled nback mindandering data and associated physiology recordings
+  - Compiled nback mindandering data and associated physiology recordings.
