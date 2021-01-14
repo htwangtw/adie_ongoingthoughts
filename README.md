@@ -1,4 +1,4 @@
-[![Build Status](https://www.travis-ci.com/htwangtw/adie_ongoingthoughts.svg?branch=main)](https://www.travis-ci.com/htwangtw/adie_ongoingthoughts)
+![Test and coverage](https://github.com/htwangtw/adie_ongoingthoughts/workflows/Test%20and%20coverage/badge.svg)
 [![codecov](https://codecov.io/gh/htwangtw/adie_ongoingthoughts/branch/main/graph/badge.svg?token=TM50FG36GZ)](https://codecov.io/gh/htwangtw/adie_ongoingthoughts)
 
 # ADIE ongoing thought analysis
@@ -10,7 +10,7 @@ Last updated: 18-12-2020
 ## setup
 Environment was tested in Linux with Python >= 3.7.
 
-We recommend running the project in a virtual environment. 
+We recommend running the project in a virtual environment.
 ```
 virtualenv env -p /path/to/bin/python3.8
 pip install -i requirements.txt
