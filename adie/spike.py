@@ -6,7 +6,7 @@ import numpy as np
 
 from neo.io import Spike2IO
 
-def smr2array(filename: str) -> tuple(list, list):
+def smr2array(filename: str) -> (list, list):
     """
     helper function to read signal from .smr file (Spike2) for the current task
     This function will have to be modified at a project by project basis

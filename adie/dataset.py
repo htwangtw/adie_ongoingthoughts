@@ -17,7 +17,7 @@ session_check = {
 
 physio_labels = ["ecg", "respiratory", "cardiac"]
 
-def parseinfo(info: str) -> tuple(str, str, str):
+def parseinfo(info: str) -> (str, str, str):
     """
     parse ADIE project data directory to subject info
 
@@ -41,7 +41,7 @@ def parseinfo(info: str) -> tuple(str, str, str):
 
 def gen_bidsbeh(bidsroot: Path or str,
                 sub: str, session: str = None,
-                derivative: str = None) -> tuple(Path, str):
+                derivative: str = None) -> (Path, str):
     """
     Generate behavioural data file path
 
