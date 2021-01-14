@@ -5,8 +5,8 @@ import pandas as pd
 from adie.dataset import *
 from adie.spike import smr2array
 
-bids_home = Path.home() / "projects/adie_ongoingthoughts/data"
-sourcedata = "projects/adie_ongoingthoughts/data/sourcedata/nback_mindwadnering"
+bids_home = Path.home() / "projects/critchley_adie/BIDS_data"
+sourcedata = "projects/critchley_adie/BIDS_data/beh_nbackmindwadnering"
 sourcedata = Path.home() / sourcedata
 
 # create a dir for all subject id present
