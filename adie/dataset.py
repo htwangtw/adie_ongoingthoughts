@@ -17,7 +17,7 @@ session_check = {
 
 physio_labels = ["ecg", "respiratory", "cardiac"]
 
-def parseinfo(info: str) -> (str, str, str):
+def parseinfo(info: str) -> tuple(str, str, str):
     """
     parse ADIE project data directory to subject info
 
@@ -41,7 +41,7 @@ def parseinfo(info: str) -> (str, str, str):
 
 def gen_bidsbeh(bidsroot: Path or str,
                 sub: str, session: str = None,
-                derivative: str = None) -> (Path, str):
+                derivative: str = None) -> tuple(Path, str):
     """
     Generate behavioural data file path
 
@@ -88,9 +88,13 @@ def convert_beh(original: Path, target: Path,
     """
     save general behavioural data to BIDS spec beh file
     """
-    df = pd.read_csv(original, header=0)
     target_file = f"{basename}_task-{label}_beh.tsv"
-    df.to_csv(target / target_file, sep= "\t", index=False)
+    if (target / target_file).exists():
+        print(f"file exist: {str(target / target_file)}")
+    else:
+        print("convert to BIDS")
+        df = pd.read_csv(original, header=0)
+        df.to_csv(target / target_file, sep= "\t", index=False)
     return target / target_file
 
 
@@ -157,8 +161,10 @@ def save_physio(target: Path, bidsnames: list,
 
     return saved
 
-def smr_derivative(origin: Path, target: Path,
-                   basename: str, task: str, recording: str) -> Path:
+def smr_derivative(origin: Path, bidsroot: Path or str,
+                sub: str, task: str, recording: str,
+                session: str = None,
+                ) -> Path:
     """
     organise the smr files in BIDS for people who
     prefer to use original spike files
@@ -180,6 +186,7 @@ def smr_derivative(origin: Path, target: Path,
         path to the renamed file
     ------
     """
+    target, basename = gen_bidsbeh(bidsroot, sub, session, derivative="physio_smr")
     target_file = f"{basename}_task-{task}_recording-{recording}_physio.smr"
     copyfile(origin, target / target_file)
     return target / target_file

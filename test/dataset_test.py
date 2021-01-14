@@ -88,8 +88,9 @@ def test_save_physio(tmpdir):
 
 def test_smr_derivative(tmpdir):
     test_file = Path(__file__).parent /  "data/file.smr"
-    sub_path, bn = gen_bidsbeh(tmpdir, "ADIE983", derivative="mytask_smr")
-    saved = smr_derivative(test_file, sub_path,
-                           basename=bn,
-                           task="mytask", recording="ecg")
+    sub_path, bn = gen_bidsbeh(tmpdir, "ADIE983", derivative="physio_smr")
+    saved = smr_derivative(test_file, tmpdir,
+                           "ADIE983", "mytask",
+                           recording="ecg")
     assert saved == sub_path / f"{bn}_task-mytask_recording-ecg_physio.smr"
+    assert saved.is_file() is True

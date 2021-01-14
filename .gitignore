@@ -1,4 +1,7 @@
-# project
+# editor
+.vscode
+.*.sw?
+*~
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
