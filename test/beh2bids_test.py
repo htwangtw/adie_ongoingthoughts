@@ -52,7 +52,7 @@ def test_check_session():
 
     exit = beh2bids.check_session("ADIE999_F",
       source_task=bidsroot / "sourcedata" / "mytask")
-    assert set(exit) == set('ADIE999F', 'ADIE999_BL')
+    assert set(exit) == set(['ADIE999F', 'ADIE999_BL'])
 
     exit = beh2bids.check_session("ADIE988_BL",
       source_task=bidsroot / "sourcedata" / "mytask")
