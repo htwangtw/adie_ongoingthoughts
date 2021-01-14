@@ -11,25 +11,28 @@ from ..dataset import (parseinfo, gen_bidsbeh,
 from ..spike import smr2array
 
 @click.command()
-@click.argument('task',
+@click.option('--task', '-t',
     help='Task directory name unders sourcedata.')
-@click.argument('adiesub',
+@click.option('--subject', '-s', 'adiesub',
     help='ADIE subject identifier (ADIE??? / CONADIE??? or suffix with session such as "ADIE???BL")')
-@click.argument('bids_root', type=click.Path(exists=True),
-    help='The root direcotry of BIDS dataset')
 @click.option('--behfile', '-f', 'file_pattern', default="*.csv", show_default=True,
     help="Behavioural data log file name pattern")
 @click.option('--physio', '-p', default=None, show_default=True,
     help="physiology recording type, such as ecg, pulseox. Set to None if no physiology data.")
+@click.argument('bids_root', type=click.Path(exists=True))
 
 def main(adiesub: str, task:str , bids_root:str,
-          file_pattern: str, physio:str or None):
+          file_pattern: str, physio:str or None = None):
+    """
+    bids_root: path to the root direcotry of BIDS dataset
+
+    """
     bids_root = Path(bids_root)
     source_task = bids_root / "sourcedata" / task
 
-    session_list = check_file(adiesub, task, source_task)
+    session_list = check_session(adiesub, task, source_task)
     if session_list == 1:
-        return
+        return 1
 
     click.echo(f"found {len(session_list)} sessions associated with {adiesub}")
     while session_list:
@@ -39,27 +42,33 @@ def main(adiesub: str, task:str , bids_root:str,
         sub_path, base_name = gen_bidsbeh(bids_root, sub, session)
 
         cur_beh = find_file(cur_ses, file_pattern, source_task)
-        beh_path = convert_beh(cur_beh[0], sub_path,
-                                base_name, task)
-        click.echo(f"f{beh_path} created")
+        cur_physio = find_file(cur_ses, "*.smr", source_task)
 
-        if physio:
-            cur_physio = find_file(cur_ses, "*.smr", source_task)
+        if cur_beh != 1:
+            beh_path = convert_beh(cur_beh, sub_path,
+                                base_name, task)
+            click.echo(f"f{beh_path} created")
+
+        if physio and cur_physio != 1:
             physio_path = save_physio(sub_path, base_name, task, cur_physio)
             click.echo(f"f{physio_path} created")
 
             der_smr = smr_derivative(cur_physio, bids_root, sub, task,
                             session=session, recording=physio)
             click.echo(f"f{der_smr} created")
+        else:
+            click.echo(f"found no smr data")
+    return 0
 
-def find_file(cur_ses, file_pattern, source_task):
-    cur_file = source_task.rglob(f"{cur_ses}/ {file_pattern}")
+def find_file(cur_ses: str, file_pattern: str, source_task: Path):
+    cur_file = list(source_task.rglob(f"**/{cur_ses}/{file_pattern}"))
     if len(cur_file) == 1:
-        return cur_file
-    click.echo(f"found none or too many match for {file_pattern} in {cur_ses}; use batter `file_pattern`")
+        return cur_file[0]
+    click.echo(f"found none or too many match for {file_pattern} in {cur_ses}")
     return 1
 
-def check_file(adiesub: str, task: str, source_task: Path) -> list(str):
+def check_session(adiesub: str, source_task: Path):
+    task = source_task.name
     sub, _, _ = parseinfo(adiesub)  # will look for all sessions
     click.echo(f"look for subject {sub} in sourcedata {task}")
     if not source_task.is_dir():
@@ -72,7 +81,4 @@ def check_file(adiesub: str, task: str, source_task: Path) -> list(str):
     return session_list
 
 if __name__ == "__main__":
-    args = sys.argv
-    if "--help" in args or len(args) == 1:
-        print("convert ADIE project behavioural data to BIDS")
     main()
