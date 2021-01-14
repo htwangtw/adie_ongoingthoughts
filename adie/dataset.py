@@ -7,6 +7,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from .spike import smr2array
+
 
 session_check = {
     "": "baseline",
@@ -129,8 +131,8 @@ def name_physiobids(basename: str, task: str, signal_info: list) -> list:
     return names
 
 
-def save_physio(target: Path, bidsnames: list,
-                signal_info: list, signals: list) -> list:
+def save_physio(target: Path, basename: str, task: str,
+                smr_file: Path) -> list:
     """
     save converted spike physio data to BIDS spec beh file
 
@@ -138,19 +140,20 @@ def save_physio(target: Path, bidsnames: list,
     -----
     target:
         target directory
-    bidsnames:
-        bids compatable file name
-    signal_info:
-        list of json containing meta data of the signal
-
-    signals:
-        list containing the signal in 1d numpy arrays
+    basename:
+        BIDS subject file base name
+    task:
+        task label
+    smr_file:
+        smr file
 
     output
     ------
     names:
         list of saved physio data path
     """
+    signal_info, signals = smr2array(str(smr_file))
+    bidsnames = name_physiobids(basename, task, signal_info)
     saved = []
     for n, d, s in zip(bidsnames, signal_info, signals):
         s = pd.DataFrame(s, index=None, columns=d["Columns"])

@@ -18,7 +18,6 @@ signal_info = [{"SamplingFrequency": 100,
                 ]
 signals = [np.array([34, 45, 23]), np.array([34, 45, 23])]
 
-
 def test_pasreinfo():
     sub, ses, group = parseinfo("CONADIE983")
     assert sub == "CONADIE983"
@@ -80,8 +79,11 @@ def test_name_physiobids():
 def test_save_physio(tmpdir):
     bidsnames = name_physiobids("sub-ADIE983_ses-baseline",
                             "mytask", signal_info)
-    saved = save_physio(tmpdir, bidsnames,
-                        signal_info, signals)
+    test_file = Path(__file__).parent /  "data/file.smr"
+    saved = save_physio(tmpdir,
+                        "sub-ADIE983_ses-baseline",
+                        "mytask",
+                        test_file)
     assert len(saved) == len(bidsnames)
     assert saved[0] == str(tmpdir / bidsnames[0])
     assert saved[1] == str(tmpdir / bidsnames[1])
