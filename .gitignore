@@ -1,9 +1,4 @@
 # project
-data/**/sub-*
-data/derivatives/**/*.tsv
-data/phenotype/*.tsv
-data/sourcedata/
-data/participants.tsv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
