@@ -14,6 +14,16 @@ def test_beh2bids():
     assert result.exit_code == 0
 
     runner = CliRunner()
+    result = runner.invoke(beh2bids.main,
+        ["-s", "CONADIE999", "-t", "nosuchtask", "-p", "ecg", f"{str(bidsroot)}"])
+    assert result.exit_code == 0
+
+    runner = CliRunner()
+    result = runner.invoke(beh2bids.main,
+        ["-s", "ADIE999F", "-t", "mytask", "-p", "ecg", f"{str(bidsroot)}"])
+    assert result.exit_code == 0
+
+    runner = CliRunner()
     result = runner.invoke(beh2bids.main, ["--help"])
     assert "Usage: main [OPTIONS] BIDS_ROOT" in result.output
     assert result.exit_code == 0

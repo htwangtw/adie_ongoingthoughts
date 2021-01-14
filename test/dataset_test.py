@@ -41,14 +41,14 @@ def test_pasreinfo():
 
 def test_gen_bidsbeh(tmpdir):
     print("check template")
-    path, bn = gen_bidsbeh(bidsroot, "ADIE983", session="baseline")
-    assert path == Path(bidsroot) / "sub-ADIE983/ses-baseline/beh"
+    path, bn = gen_bidsbeh(str(tmpdir), "ADIE983", session="baseline")
+    assert path == Path(tmpdir) / "sub-ADIE983/ses-baseline/beh"
     assert path.is_dir() is True
     assert bn == "sub-ADIE983_ses-baseline"
 
     print("single session")
-    path, bn = gen_bidsbeh(bidsroot, "ADIE983")
-    assert path == Path(bidsroot) / "sub-ADIE983/beh"
+    path, bn = gen_bidsbeh(tmpdir, "ADIE983")
+    assert path == tmpdir/ "sub-ADIE983/beh"
     assert path.is_dir() is True
     assert bn == "sub-ADIE983"
 
@@ -58,13 +58,18 @@ def test_gen_bidsbeh(tmpdir):
     assert path == tmpdir / "sub-ADIE983/ses-baseline/beh"
 
     print("derivative, no session")
-    path, bn = gen_bidsbeh(bidsroot, "ADIE983", derivative="mytask")
-    assert path == Path(bidsroot) / "derivatives/mytask/sub-ADIE983/beh"
+    path, bn = gen_bidsbeh(tmpdir, "ADIE983", derivative="mytask")
+    assert path == Path(tmpdir) / "derivatives/mytask/sub-ADIE983/beh"
     assert path.is_dir() is True
     assert bn == "sub-ADIE983"
 
 def test_conver_beh(tmpdir):
     origin = bidsroot / "sourcedata/ADIE983_beh_task.csv"
+    saved_loc = convert_beh(origin, tmpdir,
+                            "sub-ADIE983_ses-baseline", "mytask")
+    assert saved_loc == tmpdir / "sub-ADIE983_ses-baseline_task-mytask_beh.tsv"
+
+    # run again, the file should exist already, hence pass coverage
     saved_loc = convert_beh(origin, tmpdir,
                             "sub-ADIE983_ses-baseline", "mytask")
     assert saved_loc == tmpdir / "sub-ADIE983_ses-baseline_task-mytask_beh.tsv"
