@@ -30,7 +30,7 @@ def main(adiesub: str, task:str , bids_root:str,
     bids_root = Path(bids_root)
     source_task = bids_root / "sourcedata" / task
 
-    session_list = check_session(adiesub, task, source_task)
+    session_list = check_session(adiesub, source_task)
     if session_list == 1:
         return 1
 

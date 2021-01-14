@@ -10,13 +10,11 @@ bidsroot = Path(__file__).parent / "data/bids_test"
 def test_beh2bids():
     runner = CliRunner()
     result = runner.invoke(beh2bids.main,
-        ["--help",
-         f"-s CONADIE999 -t mytask {str(bidsroot)}",
-         f"-s CONADIE999 -t mytask -f *.csv {str(bidsroot)}",
-         f"-s CONADIE999 -t mytask -f *.csv -p ecg {str(bidsroot)}",
-         f"-s CONADIE989 -t mytask {str(bidsroot)}",
-         f"-s ADIE999_F -t mytask -f **/*.csv {str(bidsroot)}",
-        ])
+        ["-s", "CONADIE999", "-t", "mytask", "-p", "ecg", f"{str(bidsroot)}"])
+    assert result.exit_code == 0
+
+    runner = CliRunner()
+    result = runner.invoke(beh2bids.main, ["--help"])
     assert "Usage: main [OPTIONS] BIDS_ROOT" in result.output
     assert result.exit_code == 0
 

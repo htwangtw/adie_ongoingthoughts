@@ -1,3 +1,5 @@
+test/data/bids_test/derivatives/*
+
 # editor
 .vscode
 .*.sw?
