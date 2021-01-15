@@ -13,4 +13,3 @@ def test_smr2array():
     assert type(out[0][0]) == dict
     assert type(out[1][0]) == np.ndarray
     assert out[1][0].shape[0] == 790040
-

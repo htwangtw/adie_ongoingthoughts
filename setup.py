@@ -7,8 +7,15 @@ setup(
     author="Hao-Ting Wang",
     author_email='htwangtw@gmail.com',
     python_requires='>=3.7',
-    description="adie ongoing tought analysis tools",
+    description="ADIE ongoing thought analysis tools",
     name='adie',
     packages=find_packages(),
-    version='0.0.1-alpha',
+    install_requires=[
+        'Click',
+    ],
+    entry_points='''
+        [console_scripts]
+        beh2bids=adie.scripts.beh2bids:main
+    ''',
+    version='0.0.2',
 )

@@ -1,7 +1,9 @@
-# project
-data/**/sub-*
-data/derivatives/**/*.tsv
-data/sourcedata
+test/data/bids_test/derivatives/*
+
+# editor
+.vscode
+.*.sw?
+*~
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
