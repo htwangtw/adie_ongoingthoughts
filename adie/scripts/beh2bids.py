@@ -34,7 +34,7 @@ def main(adiesub: str, task:str , bids_root:str,
     if session_list == 1:
         return 1
     if "/" in task:
-        task = task.sep("/")[-1]
+        task = task.split("/")[-1]
 
     click.echo(f"found {len(session_list)} sessions associated with {adiesub}")
     while session_list:
