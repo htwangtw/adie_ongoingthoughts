@@ -7,11 +7,11 @@ setup(
     author="Hao-Ting Wang",
     author_email='htwangtw@gmail.com',
     python_requires='>=3.7',
-    description="ADIE ongoing thought analysis tools",
+    description="ADIE data curation tools",
     name='adie',
     packages=find_packages(),
     install_requires=[
-        'Click',
+        'click',
     ],
     entry_points='''
         [console_scripts]

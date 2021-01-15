@@ -1,7 +1,7 @@
 ![Test and coverage](https://github.com/htwangtw/adie_ongoingthoughts/workflows/Test%20and%20coverage/badge.svg)
 [![codecov](https://codecov.io/gh/htwangtw/adie_ongoingthoughts/branch/main/graph/badge.svg?token=TM50FG36GZ)](https://codecov.io/gh/htwangtw/adie_ongoingthoughts)
 
-# ADIE ongoing thought analysis
+# ADIE data curation tools
 
 Authors: Hao-Ting Wang, Will Strawson
 
@@ -54,6 +54,9 @@ cd /path/to/this/repo/
 source env/bin/activate
 ```
 
+I am considering to publish it as a standard library for the ease of use.
+If you want to work on it, let me know!
+
 ### Add a new participant
 We created command line tool `beh2bids` to convert experiment log and physiology smr file.
 To use this tool, place the new data under the relevant directory in `sourcedata`.
@@ -89,4 +92,7 @@ Please find cluster job script `bin/populate_nback.sh` and use it as a template.
 WIP
 
 ## Questions, bugs related to this tool
-Please open an issue on this repository or contact Hao-Ting Wang through email.
+Please let me know by opening an [issue](https://github.com/htwangtw/adie_ongoingthoughts/issues)!
+
+## Contribution guidelines
+Please have a look at nibable's [contribution guidelines](https://nipy.org/nibabel/devel/devguide.html). I found them really useful so nor bothered to write my own. These guidelines are designed to make it as easy as possible to get involved. If you have any questions that aren't discussed in the documentation, or it's difficult to find what you're looking for, please let me know by opening an [issue](https://github.com/htwangtw/adie_ongoingthoughts/issues)!
