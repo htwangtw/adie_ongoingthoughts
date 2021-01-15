@@ -8,7 +8,7 @@ BIDSDIR=$2
 cd ${BIDSDIR}/code
 source env/bin activate
 
-pip install ${BIDSDIR}/code/
+pip install .
 
 shopt -s globstar
 subid=`ls ${BIDSDIR}/sourcedata/${TASK}/**/*ADIE*/ -d | awk -F "/" '{printf("%s\n", $(NF-1)); }'`
