@@ -1,17 +1,23 @@
 import pandas as pd
 from pathlib import Path
 
-def read_log(filepath: Path) -> pd.DataFrame:
+from .bids import parse_bids_filename, update_entity
+
+def read_log(filepath: Path) -> dict:
     '''
     Read BIDS file path
     '''
-    return pd.read_csv(filepath, sep="\t")
+    return {filepath.name : pd.read_csv(filepath, sep="\t")}
 
-def extract_probes(self, parameter_list):
+def extract_stimtype(data: pd.DataFrame, filename: str,
+        stimtype: str, columns: list) -> pd.DataFrame:
     """
-    Get thought probes
+    Get trials with matching label under stimType
     """
-    raise NotImplementedError
+    parsed_fn = parse_bids_filename(filename)
+    stimresp = data.query(f"stimType == '{stimtype}'")
+    sliced = stimresp.loc[:, columns]
+    return update_entity(sliced, ["sub", "ses", "run"], parsed_fn)
 
 def extract_performance(self, parameter_list):
     """
