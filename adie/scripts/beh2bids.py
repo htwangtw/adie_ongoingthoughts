@@ -12,7 +12,7 @@ from ..spike import smr2array
 
 @click.command()
 @click.option('--task', '-t',
-    help='Task directory name unders sourcedata.')
+    help='Path to task data directory unders sourcedata.')
 @click.option('--subject', '-s', 'adiesub',
     help='ADIE subject identifier (ADIE??? / CONADIE??? or suffix with session such as "ADIE???BL")')
 @click.option('--behfile', '-f', 'file_pattern', default="*.csv", show_default=True,
