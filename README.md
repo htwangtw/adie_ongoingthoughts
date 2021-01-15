@@ -17,12 +17,22 @@ Environment was tested under Ubuntu20.04 with Python >= 3.7.
 
 We recommend running the project in a virtual environment.
 ```
+cd /path/to/this/repo/
 virtualenv env -p /path/to/bin/python3.8
 source env/bin/activate
 pip install -i requirements.txt
 
 # install ADIE data analysis aid
 python setup.py
+```
+After setup for the first time, you need to activate the enviroment to use this project.
+```
+cd /path/to/this/repo/
+source env/bin/activate
+```
+To deactivate:
+```
+deactivate
 ```
 
 For developers:
@@ -34,6 +44,15 @@ python setup.py
 ```
 
 ## Populate BIDS dataset
+
+All scripts are under `bin`.
+Packaged analysis module `adie` is in directory of the same name.
+If you follow the setup instruction, you should be able to use the `adie` module as a normal python module in the project environment after sourcing the virtual environment.
+
+```
+cd /path/to/this/repo/
+source env/bin/activate
+```
 
 ### Add a new participant
 We created command line tool `beh2bids` to convert experiment log and physiology smr file.
