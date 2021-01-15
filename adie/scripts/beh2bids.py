@@ -12,7 +12,7 @@ from ..spike import smr2array
 
 @click.command()
 @click.option('--task', '-t',
-    help='Path to task data directory unders sourcedata.')
+    help='Path to task data directory unders sourcedata. (something/someting/taskname)')
 @click.option('--subject', '-s', 'adiesub',
     help='ADIE subject identifier (ADIE??? / CONADIE??? or suffix with session such as "ADIE???BL")')
 @click.option('--behfile', '-f', 'file_pattern', default="*.csv", show_default=True,
@@ -33,6 +33,8 @@ def main(adiesub: str, task:str , bids_root:str,
     session_list = check_session(adiesub, source_task)
     if session_list == 1:
         return 1
+    if "/" in task:
+        task = task.sep("/")[-1]
 
     click.echo(f"found {len(session_list)} sessions associated with {adiesub}")
     while session_list:
