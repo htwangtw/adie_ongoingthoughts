@@ -6,7 +6,7 @@ TASK=$1
 BIDSDIR=$2
 
 cd ${BIDSDIR}/code
-source env/bin activate
+source env/bin/activate
 
 pip install .
 
