@@ -6,7 +6,7 @@ import pandas as pd
 
 data = read_log(Path("test/data/sub-999_ses-baseline_task-nbackmindwandering_beh.tsv"))
 columns = ["StimIndex", 'nBack', 'fixStart', 'stimStart', 'mwType', 'keyResp', 'respRT']
-data, filename = data.popitem()
+filename, data = data.popitem()
 sliced = extract_stimtype(data, filename, "MWQ", columns)
 
 # extract data
