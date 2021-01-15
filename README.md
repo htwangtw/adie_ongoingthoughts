@@ -87,3 +87,6 @@ Please find cluster job script `bin/populate_nback.sh` and use it as a template.
 
 ### fMRI data
 WIP
+
+## Questions, bugs related to this tool
+Please open an issue on this repository or contact Hao-Ting Wang through email.
