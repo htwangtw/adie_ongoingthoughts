@@ -16,5 +16,7 @@ for p in bids_dir.glob("sub-*/**/*task-nback*.tsv"):
 master_probes = pd.concat(sub_probes, axis=0)
 master_beh = pd.concat(sub_beh, axis=0)
 
-master_probes.to_csv(bids_dir / "derivatives" / "task-nbackmindwandering_probes.tsv", sep="\t")
-master_beh.to_csv(bids_dir / "derivatives" / "task-nbackmindwandering_performance.tsv", sep="\t")
+master_probes.to_csv(bids_dir / "derivatives" / "nback_derivatives" /
+    "task-nbackmindwandering_probes.tsv", sep="\t")
+master_beh.to_csv(bids_dir / "derivatives" / "nback_derivatives" /
+    "task-nbackmindwandering_performance.tsv", sep="\t")
