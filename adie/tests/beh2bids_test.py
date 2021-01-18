@@ -14,7 +14,7 @@ bids_dir = Path(get_test_data_path()) / "adie_data"
 def runner():
     return CliRunner()
 
-def test_beh2bids():
+def test_beh2bids(runner):
     result = runner.invoke(beh2bids.main,
         ["-s", "CONADIE999", "-t", "mytask", "-p", "ecg", f"{str(bids_dir)}"])
     assert result.exit_code == 0
