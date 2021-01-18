@@ -8,7 +8,6 @@ from pathlib import Path
 
 from ..dataset import (parseinfo, gen_bidsbeh,
             convert_beh, smr_derivative, save_physio)
-from ..spike import smr2array
 
 @click.command()
 @click.option('--task', '-t',

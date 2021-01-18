@@ -25,8 +25,6 @@ def test_extract_stimtype():
     sliced = extract_stimtype(data, filename, "MWQ", columns)
     assert sliced.shape[1] == len(columns) + 2  # subject id and sesstion
 
-
-
     # extract data
     # disgusting one liner to get all thought probes
     probes = pd.concat([entry.loc[:, ["keyResp"]].reset_index(drop=True).rename({"keyResp": item}, axis=1)
