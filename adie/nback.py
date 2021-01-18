@@ -27,14 +27,14 @@ def extract_stimtype(data: pd.DataFrame, filename: str,
     sliced = stimresp.loc[:, columns]
     return update_entity(sliced, identity_entity, parsed_fn)
 
-def extract_performance(self, parameter_list):
-    """
-    Get accuracy and reaction time
-    """
-    raise NotImplementedError
+# def extract_performance(self, parameter_list):
+#     """
+#     Get accuracy and reaction time
+#     """
+#     raise NotImplementedError
 
-def save_derivative(self, parameter_list):
-    """
-    Save extracted data
-    """
-    raise NotImplementedError
+# def save_derivative(self, parameter_list):
+#     """
+#     Save extracted data
+#     """
+#     raise NotImplementedError
