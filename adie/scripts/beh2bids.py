@@ -42,24 +42,41 @@ def main(adiesub: str, task:str , bids_root:str,
         sub, session, _ = parseinfo(cur_ses)
         sub_path, base_name = gen_bidsbeh(bids_root, sub, session)
 
-        cur_beh = find_file(cur_ses, file_pattern, source_task)
-        cur_physio = find_file(cur_ses, "*.smr", source_task)
+        process_beh(cur_ses, file_pattern,
+                source_task, sub_path,
+                base_name, task)
 
-        if cur_beh != 1:
-            beh_path = convert_beh(cur_beh, sub_path,
-                                base_name, task)
-            click.echo(f"f{beh_path} created")
-
-        if physio and cur_physio != 1:
-            physio_path = save_physio(sub_path, base_name, task, cur_physio)
-            click.echo(f"f{physio_path} created")
-
-            der_smr = smr_derivative(cur_physio, bids_root, sub, task,
-                            session=session, recording=physio)
-            click.echo(f"f{der_smr} created")
-        else:
-            click.echo(f"found no smr data")
+        process_smr(cur_ses, bids_root,
+                source_task, sub_path,
+                base_name, task, sub, session, physio)
     return 0
+
+def process_beh(cur_ses, file_pattern,
+                source_task, sub_path,
+                base_name, task):
+    cur_beh = find_file(cur_ses, file_pattern, source_task)
+    if cur_beh != 1:
+        beh_path = convert_beh(cur_beh, sub_path,
+                            base_name, task)
+        click.echo(f"f{beh_path} created")
+    else:
+        click.echo(f"behavioural file exist")
+    return
+
+def process_smr(cur_ses, bids_root,
+                source_task, sub_path,
+                base_name, task, sub, session, physio):
+    cur_physio = find_file(cur_ses, "*.smr", source_task)
+    if physio and cur_physio != 1:
+        physio_path = save_physio(sub_path, base_name, task, cur_physio)
+        click.echo(f"f{physio_path} created")
+
+        der_smr = smr_derivative(cur_physio, bids_root, sub, task,
+                        session=session, recording=physio)
+        click.echo(f"f{der_smr} created")
+    else:
+        click.echo(f"found no smr data")
+    return
 
 def find_file(cur_ses: str, file_pattern: str, source_task: Path):
     cur_file = list(source_task.rglob(f"**/{cur_ses}/{file_pattern}"))
@@ -75,7 +92,8 @@ def check_session(adiesub: str, source_task: Path):
     if not source_task.is_dir():
         click.echo(f"{task} not in sourcedata. Wrong task name?")
         return 1
-    session_list = [p.name for p in source_task.glob(f"**/{sub}*/") if p.is_dir()]
+    ses_glob = source_task.glob(f"**/{sub}*/")
+    session_list = [p.name for p in ses_glob if p.is_dir()]
     if not session_list:
         click.echo(f"{sub} not in {task}. Wrong subject ADIE ID?")
         return 1

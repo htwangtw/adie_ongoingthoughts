@@ -97,7 +97,8 @@ def _find_probe_index(data):
 def _get_probe_time(data):
     idx_start, idx_end = _find_probe_index(data)
     probe_start = data.loc[idx_start, "stimStart"].reset_index(drop=True)
-    prob_end = data.loc[idx_end, ["stimStart", "respRT"]].reset_index(drop=True).sum(axis=1)
+    prob_end = data.loc[idx_end, ["stimStart", "respRT"]].reset_index(drop=True)
+    prob_end = prob_end.sum(axis=1)
     prob_end.name = "stimEnd"
     return pd.concat([probe_start, prob_end], axis=1)
 
