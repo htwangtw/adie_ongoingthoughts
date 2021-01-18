@@ -6,7 +6,7 @@ import numpy as np
 from adie.dataset import *
 from adie.tests import get_test_data_path
 
-bids_dir = Path(get_test_data_path()) / "bids_test"
+bids_dir = Path(get_test_data_path()) / "adie_data"
 test_file = Path(get_test_data_path()) / "file.smr"
 
 signal_info = [{"SamplingFrequency": 100,

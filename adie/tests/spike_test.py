@@ -5,9 +5,9 @@ from adie.spike import smr2array
 from adie.tests import get_test_data_path
 
 
+test_file = os.path.join(get_test_data_path(), "file.smr")
 
 def test_smr2array():
-    test_file = os.path.join(get_test_data_path(), "file.smr")
     out = smr2array(test_file)
     assert type(out) == tuple
     assert type(out[0]) == list

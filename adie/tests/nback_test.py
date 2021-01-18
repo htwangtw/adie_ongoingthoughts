@@ -1,11 +1,13 @@
-from adie.nback import read_log, extract_stimtype
-
 from pathlib import Path
 import pandas as pd
 
 import pytest
 
-testdata = Path("test/data/sub-999_ses-baseline_task-nbackmindwandering_beh.tsv")
+from adie.nback import read_log, extract_stimtype
+from adie.tests import get_test_data_path
+
+
+testdata = Path(get_test_data_path()) / "sub-999_ses-baseline_task-nbackmindwandering_beh.tsv"
 
 def test_read_log():
     data = read_log(testdata)
