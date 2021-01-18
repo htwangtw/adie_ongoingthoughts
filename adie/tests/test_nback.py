@@ -22,10 +22,10 @@ def test_nback():
     sliced = extract_stimtype(data, "MWQ", mwq)
     assert len(mwq) == 7  # original input ketp un changed
     assert sliced.shape[1] == 9 # subject id and sesstion
-    assert sliced.shape[0] == 18
 
     probes = compile_probes(data)
     assert probes.shape[0] == 12
+    assert probes.shape[1] == 18
 
     beh = compile_performance(data)
     assert beh.shape[0] == 3
