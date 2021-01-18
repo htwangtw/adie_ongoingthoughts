@@ -40,11 +40,13 @@ def update_entity(df: pd.DataFrame, entity: str or list,
     update = df.copy()
     if type(entity) is str:
         entity = [entity]
-
-    while entity:
-        e = entity.pop()
+    candidates = entity.copy()
+    while candidates:
+        e = candidates.pop()
         if e == "sub":
             update["participant_id"] = f"sub-{parsed_filename[e]}"
+            print(e)
         elif e in parsed_filename:
             update[e] = f"{parsed_filename[e]}"
+            print(e)
     return update
