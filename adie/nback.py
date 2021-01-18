@@ -82,7 +82,7 @@ def save_derivative(self, parameter_list):
 
 
 def _split_probes(data):
-    probes = [entry.rename({"keyResp": mwtype}, axis=1)
+    probes = [entry.loc[:, ["keyResp"]].rename({"keyResp": mwtype}, axis=1)
         for mwtype, entry in data.groupby("mwType")]
     return pd.concat([p.reset_index(drop=True) for p in probes], axis=1)
 
