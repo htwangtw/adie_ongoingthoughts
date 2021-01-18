@@ -42,13 +42,22 @@ def main(adiesub: str, task:str , bids_root:str,
         sub, session, _ = parseinfo(cur_ses)
         sub_path, base_name = gen_bidsbeh(bids_root, sub, session)
 
-        process_beh(cur_ses, file_pattern,
+        beh_path = process_beh(cur_ses, file_pattern,
                 source_task, sub_path,
                 base_name, task)
+        if beh_path:
+            click.echo(f"f{beh_path} created")
+        else:
+            click.echo(f"behavioural file exist")
 
-        process_smr(cur_ses, bids_root,
-                source_task, sub_path,
-                base_name, task, sub, session, physio)
+        physio_files = process_smr(cur_ses, bids_root,
+                    source_task, sub_path,
+                    base_name, task, sub, session, physio)
+        if physio_files:
+            click.echo(f"{physio_files[0]} created\n {physio_files[1]} created")
+        else:
+            click.echo(f"found no smr data")
+
     return 0
 
 def process_beh(cur_ses, file_pattern,
@@ -56,12 +65,10 @@ def process_beh(cur_ses, file_pattern,
                 base_name, task):
     cur_beh = find_file(cur_ses, file_pattern, source_task)
     if cur_beh != 1:
-        beh_path = convert_beh(cur_beh, sub_path,
+        return convert_beh(cur_beh, sub_path,
                             base_name, task)
-        click.echo(f"f{beh_path} created")
     else:
-        click.echo(f"behavioural file exist")
-    return
+        return
 
 def process_smr(cur_ses, bids_root,
                 source_task, sub_path,
@@ -69,14 +76,11 @@ def process_smr(cur_ses, bids_root,
     cur_physio = find_file(cur_ses, "*.smr", source_task)
     if physio and cur_physio != 1:
         physio_path = save_physio(sub_path, base_name, task, cur_physio)
-        click.echo(f"f{physio_path} created")
-
         der_smr = smr_derivative(cur_physio, bids_root, sub, task,
                         session=session, recording=physio)
-        click.echo(f"f{der_smr} created")
+        return physio_path, der_smr
     else:
-        click.echo(f"found no smr data")
-    return
+        return
 
 def find_file(cur_ses: str, file_pattern: str, source_task: Path):
     cur_file = list(source_task.rglob(f"**/{cur_ses}/{file_pattern}"))
