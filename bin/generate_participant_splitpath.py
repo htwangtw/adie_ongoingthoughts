@@ -2,8 +2,8 @@ from pathlib import Path
 Path.cwd()
 data = Path.cwd()
 data.absolute() # Prints absolute path
-data.glob("Sub_01") # Selects all directories named Sub_* In Python, the glob module is used to retrieve files/pathnames matching a specified pattern.
-subj=list(data.glob("Sub_01")) # Lists directories
+data.glob("Sub_*") # Selects all directories named Sub_* In Python, the glob module is used to retrieve files/pathnames matching a specified pattern.
+subj=list(data.glob("Sub_*")) # Lists directories
 
 sub_str = [ str(e) for e in subj] # subjects as string, converts elements from windows path to string retaining list format
 
@@ -24,4 +24,4 @@ from pandas import DataFrame
 df = DataFrame (sub_str,columns=['Subjects'])
 print (df)
 
-df.to_csv('Participant_generator.tsv', sep = '\t', index=False) # Output to .tsv file
+df.to_csv('Participant_generator2.tsv', sep = '\t', index=False) # Output to .tsv file
