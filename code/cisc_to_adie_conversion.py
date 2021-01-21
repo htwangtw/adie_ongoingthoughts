@@ -18,7 +18,7 @@ with open(txt) as f:
 # USE OS.WALK
 
 def subconvert(p):
-# P should = the path of the directory above the sub- dirs 
+# P should = the path of the directory above the sub- dirs
     for root,dirs,files in os.walk(p):
         for f in files:
             # Extract sub- number for searching 
@@ -37,7 +37,7 @@ def subconvert(p):
                         newf = f.replace(cidn,rename[cid])
                         print("Renaming",f,"to",newf)
                         os.rename(f,newf)
-                        
+
                         # Replace f with newf
                     except Exception as e:
                         #print(e)
@@ -63,11 +63,8 @@ def subconvert(p):
                     # Replace f with newf
                 except Exception as e:
                     print(e)
-                    pass
-
         except Exception as e:
-                print(e)
-                pass
+            print(e)
 
 p = "/Volumes/cisc2/projects/critchley_adie/wills_data/bids/bids_data1/"
 
