@@ -30,12 +30,12 @@ def test_pasreinfo():
     sub, ses, group = parseinfo("ADIE983_FY")
     assert sub == "ADIE983"
     assert group == "patient"
-    assert ses == "1yf"
+    assert ses == "oneyear"
 
     sub, ses, group = parseinfo("ADIE983F")
     assert sub == "ADIE983"
     assert group == "patient"
-    assert ses == "3mf"
+    assert ses == "oneweek"
 
     sub, ses, group = parseinfo("ADIE983_BL")
     assert sub == "ADIE983"
