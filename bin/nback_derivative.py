@@ -7,7 +7,7 @@ import pandas as pd
 
 from adie.nback import read_log, compile_performance, compile_probes, compile_ses
 
-bids_dir = Path("/research/cisc2/projects/critchley_adie/BIDS_data")
+bids_dir = Path("__file__").parent  # this file is in BIDS_data/code
 sub_probes = []
 sub_beh = []
 sub_ses = []
@@ -28,7 +28,7 @@ master_beh.to_csv(bids_dir / "derivatives" / "nback_derivatives" /
     "task-nbackmindwandering_performance.tsv", sep="\t", index=False)
 master_ses.to_csv(bids_dir / "derivatives" / "nback_derivatives" /
     "task-nbackmindwandering_sessionthough.tsv", sep="\t")
-    
+
 
 # get the full question of thought probe
 probe_json = bids_dir / "derivatives" / "nback_derivatives" / "probes.json"
@@ -40,7 +40,7 @@ if not probe_json.is_file:
     es_probe = es_probe.reset_index().loc[:13, ["mwType", "stimPic", "Ans"]]
 
     probes = {}
-    for a, full in es_probe.set_index(["mwType"]).iterrows(): 
+    for a, full in es_probe.set_index(["mwType"]).iterrows():
         probes[a] = {"question": full["stimPic"],
                      "scale": full["Ans"]}
 
@@ -51,7 +51,7 @@ if not session_json.is_file:
     es_end = es_end.reset_index().loc[:, ["mwType", "stimPic", "Ans"]]
 
     end = {}
-    for a, full in es_end.set_index(["mwType"]).iterrows(): 
+    for a, full in es_end.set_index(["mwType"]).iterrows():
         end[a] = {"question": full["stimPic"],
                   "scale": full["Ans"]}
     with open(session_json) as f:
