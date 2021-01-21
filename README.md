@@ -3,7 +3,7 @@
 
 # ADIE data curation tools
 
-Authors: Hao-Ting Wang, Will Strawson
+Authors: Hao-Ting Wang, Will Strawson, Joel Patchitt
 
 Last updated: 15-01-2021
 
@@ -16,6 +16,8 @@ All tools were written based on [BIDSv1.4.1](https://bids-specification.readthed
 Environment was tested under Ubuntu20.04 with Python >= 3.7.
 
 We recommend running the project in a virtual environment.
+
+### Linux
 ```
 cd /path/to/this/repo/
 virtualenv env -p /path/to/bin/python3.8
