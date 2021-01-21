@@ -1,30 +1,24 @@
 from pathlib import Path
-Path.cwd()
+import os
+import pandas as pd
+#from adie.tests import get_test_data_path
+
+
+#bids_dir = Path(get_test_data_path())
+#subj = list(bids_dir.glob("sub-*"))
+
 data = Path.cwd()
-data.absolute() # Prints absolute path
-data.glob("Sub_*") # Selects all directories named Sub_* In Python, the glob module is used to retrieve files/pathnames matching a specified pattern.
-list(data.glob("Sub_*")) # Lists directories
-subj = list(data.glob("Sub_*")) # Adds variable for list   
-    
+subj = list(data.glob("Sub_*")) # Lists directories
+sub_str = [str(e) for e in subj] # Subjects as string, converts elements from windows path to string retaining list format 
 
-sub_str = [ str(e) for e in subj] # subjects as string, converts elements from windows path to string retaining list format
+sub_id = []
+while sub_str:  # stop when sub_str is empty
+    cur_sub = sub_str.pop()  # pop an item from the list
+    cur_sub = cur_sub.split(os.sep) # split string by os specific separator, return a list of strings
+    sub_id.append(cur_sub[-1]) # save output
 
-    
-len(sub_str) # Equals amount of elements in substr list
-total_elements = len(sub_str) # Variable for while loop
-element = 0 # List elements start at 0
-
-while element <= total_elements-1: # total_elements = 4 in this instance
-
-    sub_str[element] = sub_str[element].replace("\\","").replace("'","").replace(":","") # Removes unwanted symbols
-    sub_str[element] = sub_str[element].replace("CUsersjoelpDesktopData","") # Removes unwanted text
-    
-    element = element+1 #End of loop
-    
 #Convert list into a a dateframe
-from pandas import DataFrame
-df = DataFrame (sub_str,columns=['Subjects'])
+df = pd.DataFrame(sub_id,columns=['participant_id'])
 print (df)
 
-df.to_csv('Participant_generator.tsv', sep = '\t', index=False) # Output to .tsv file
-#end
+df.to_csv('participant.tsv', sep='\t', index=False) # Output to .tsv file
