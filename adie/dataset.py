@@ -13,8 +13,9 @@ from .spike import smr2array
 session_check = {
     "": "baseline",
     "BL": "baseline",
-    "F": "3mf",
-    "FY": "1yf"
+    "F": "oneweek",
+    "3mf": "threemonth",
+    "FY": "oneyear"
     }
 
 physio_labels = ["ecg", "respiratory", "cardiac"]
