@@ -21,4 +21,4 @@ while sub_str:  # stop when sub_str is empty
 df = pd.DataFrame(sub_id,columns=['participant_id'])
 print (df)
 
-df.to_csv('participant.tsv', sep='\t', index=False) # Output to .tsv file
+df.to_csv('participants.tsv', sep='\t', index=False) # Output to .tsv file
