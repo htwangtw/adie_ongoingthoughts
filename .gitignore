@@ -1,3 +1,10 @@
+test/data/bids_test/derivatives/*
+
+# editor
+.vscode
+.*.sw?
+*~
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,3 +134,17 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+# libreoffice lockfile
+*.~lock*

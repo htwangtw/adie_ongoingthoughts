@@ -1,0 +1,10 @@
+{
+  "SamplingFrequency": 1000.0,
+  "StartTime": 0.0,
+  "Columns": [
+    "ecg"
+  ],
+  "ECG": {
+    "Unit": "arbitrary"
+  }
+}
