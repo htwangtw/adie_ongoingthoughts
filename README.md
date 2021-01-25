@@ -22,7 +22,7 @@ We recommend running the project in a virtual environment.
 cd /path/to/this/repo/
 virtualenv env -p /path/to/bin/python3.8
 source env/bin/activate
-pip install -i requirements.txt
+pip install -r requirements.txt
 
 # install ADIE data analysis aid
 python setup.py
