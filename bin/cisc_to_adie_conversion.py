@@ -1,38 +1,41 @@
 # Script to convert CISC ID to ADIE ID in directory and file names 
-# This is only tested on directories/file£s with a BIDS naming convention
-# The way the script searches for the sub- ID is dependent on the characters before and after,
-# which is specific to BIDS - be aware  
+# This is only tested on directories/files with a BIDS naming convention
 
 import pandas as pd
 import os 
 import re
 import shutil
 import sys, os
+from pathlib import Path
+import glob
 
 
-# TODO: make this path relative to the user 
+# Script has to run from within critchely_adie/ cisc2 dir for the paths to work
+#TODO: construct CISC2 file path
+# TODO: change session- labels to be 'baseline' or 'intervention'
 
-# TODO: Use something more forgiving than shutil.move? Maybe shutil.copy then delete the old dataset when 100% safe?
-# shutil.move is quite desturctive in that it's deleting the old files
-# and if something goes wrong halfway through a conversion, you're left with two incomplete datasets 
 
-# TODO: Try this on edgy test cases as per H-T's previous comments (e.g. pytest)
-# TODO: Figure out Github actions so i can get GH feedback on this script
-# Refer to H-T's scripts for this 
 
-#Import adie/cisc conversion txt file and store as dataframe
-txt=("/Volumes/cisc2/projects/critchley_adie/BIDS_data/sourcedata/adie_idconvert.txt")
+scriptpath = os.path.realpath(__file__)
+print ('Script path =',scriptpath)
+# Get path to ADIE dir
+adie_dir = os.path.dirname(os.path.dirname(os.path.dirname(scriptpath)))
+print('Main ADIE Directory =',adie_dir)
+# import conversion txt file 
+txtfile = os.path.join(adie_dir, 'BIDS_data/sourcedata/adie_idconvert.txt')
+print ('Conversion txt file path =',txtfile)
 
 # convert this to dictonary, where key = CISC and val = ADIE 
-rename = {}
-with open(txt) as f:
-    for line in f:
-        (key,val)=line.split()
-        #Remove any non-digit i.e. 'CISC'
-        rename[str(re.sub("[^0-9]","",key))] = str(val)
+def convert_dict(txtfile):  # sourcery skip: move-assign
+    rename = {}
+    with open(txtfile) as f:
+        for line in f:
+            (key,val)=line.split()
+            #Remove any non-digit i.e. 'CISC'
+            rename[str(re.sub("[^0-9]","",key))] = str(val)
+        return rename
 
-
-# Function 1 - consolidate sub- dir as 'root' - bit redundent for now butmay come in handy 
+# Function 1 - consolidate sub- dir as string - bit redundent for now but may come in handy 
 def subpaths(sub):
     return str(sub)
 
@@ -46,7 +49,7 @@ def idmatch(r):
         # return new ID with 'sub-' appended, as per BIDS convention, and CISCID
         return "sub-" + rename[cid], cid
     elif cid not in rename.keys():
-        print("CISC ID not recognized!")
+        print("CISC ID ({}) not recognized!".format(cid))
 
 # Function 3 - Create new directory with same structure 
 def newdir(newid,root):
@@ -88,19 +91,63 @@ def movefiles(sub,newid,cid):
             elif 'DS_Store' in f:
                 continue
 
-# -------------- RUN FUNCTIONS -------------- #
+# Function 5 - Count number of files in a sub- dir 
+def numfiles(subdr):
+    # initialize variable
+    numf = 0
+    for root, dirs, files in os.walk(subdr):
+        numf += len(files)
+        return numf
+    print ("Number of files in {}: {}".format(subdr,numf))
 
+# Function 6 - remove redundent dirs
+def compare(numf_old,numf_new,dir_to_del):
+    if numf_old == numf_new:
+        print ("Removing:",sub, '\n', 'Number of files equal - suggests successful conversion')
+        shutil.rmtree(dir_to_del)
+    else:
+        print (" Not removing:",sub,'\n','Number of files not equal!')
+
+
+# TODO: F7 - Chnage participants.tsv 
+
+
+
+# -------------- RUN FUNCTIONS -------------- #
+# This bit will be in /test/ directory 
 # For now, just loop over one subject for testing purposes 
-path = '/Volumes/cisc2/projects/critchley_adie/wills_data/bids/bids_data2/sub-23014'
+# sourcery skip
+subdirs = os.path.join(adie_dir, 'wills_data/test_data/sub-*')
 
 # Loop through each subject 
-for sub in glob.glob(path):
+for sub in glob.glob(subdirs):
+    # F5 - Store number of files in original directory 
+    numf_old = numfiles(sub)
+    # Get dict 
+    rename = convert_dict(txtfile)
     # F1 - List sub directory for searching  
     r = subpaths(sub)
     # F2 - Extract CISC ID from root name, and match with ADIE ID 
-    newid,cid = idmatch(r)
-    print(newid,cid)
+    # If CISC ID not recognized, return to start of loop and processnext subject  
+    try:
+        newid,cid = idmatch(r)
+        print(newid,cid)
+    except:
+        print ("Error occured! Ignoring", sub)
+        continue
     # F3 - Recreate directory sturcture, using new ID names
     newdir(newid,r)
     # F4 - Copy files from old to new structure, while renaming
     movefiles(sub,newid,cid)
+    # F5 - Store number of files in new directory 
+    numf_new = numfiles(os.path.join(os.path.dirname(sub),newid))
+    # F6 - Check if number of files in new sub dir is == to num files in original sub dir
+    compare(numf_old,numf_new,sub)
+    # Look prettier
+    print ('\n','#####------------------- NEW SUBJECT DIRECTORY --------------------#####','\n')
+
+
+
+
+
+
