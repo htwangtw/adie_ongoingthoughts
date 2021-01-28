@@ -1,3 +1,9 @@
+'''
+Gather subject IDs from a BIDS dataset
+
+Usage:
+python generate_participant.py
+'''
 from pathlib import Path
 import os
 import pandas as pd
@@ -7,8 +13,8 @@ import pandas as pd
 #bids_dir = Path(get_test_data_path())
 #subj = list(bids_dir.glob("sub-*"))
 
-def generate_participants(datafile):
-    subj = list(datafile.glob("Sub-*")) # Lists directories
+def generate_participants(bids_root):
+    subj = list(bids_root.glob("sub-*")) # Lists directories
     sub_str = [str(e) for e in subj] # Subjects as string, converts elements from windows path to string retaining list format 
 
     sub_id = []
@@ -19,5 +25,8 @@ def generate_participants(datafile):
 
     #Convert list into a a dateframe
     df = pd.DataFrame(sub_id,columns=['participant_id'])
-
-df.to_csv('participants.tsv', sep='\t', index=False) # Output to .tsv file
+    df.to_csv(bids_root / 'participants.tsv', sep='\t', index=False) # Output to .tsv file
+    
+if __name__ == '__main__':
+    project_root = Path(__file__).parents(2) 
+    generate_participants(project_root)
