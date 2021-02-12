@@ -58,18 +58,18 @@ for name, cat in zip(["demographics", "height_weight", "diagnosis", "admin"], # 
 
 for k in sessions: # Loops the session keys through the following function:
     def sess_parse(sess_key): # Funtion for extracting assessments based on session:
-        if sess_key == "F":
-            for an in assessments: # 'an' = assessment name AKA for item in assessments list
+        for an in assessments: # 'an' = assessment name AKA for item in assessments list
+            partid = [c for c in df.columns if subid in c]
+            subscales = [c for c in df.columns if an in c]
+            if sess_key == "F":
                 sess_key = "F_"
-                partid = [c for c in df.columns if subid in c]
-                subscales = [c for c in df.columns if an in c]
                 #subscales = [c for c in df.columns if an in c]  # Identifies columns containing 'an' AKA item in 'assessments'
                 subscales = [c for c in subscales if sess_key in c] # Further identifies columns containing the session key 
                 sess_key = "F"
                 if subscales: # If subscales exist run this loop:
                     desc = {c.replace(sess_key, ""): template # Removes session indicator for .json file
                             for c in subscales if sess_key in c} # Only does the above for the following
-                
+
                     desc["MeasurementToolMetadata"] = MeasurementToolMetadata # Adds 'measurementoolmetadata' to existing .json file
                     with open(output_dir / f"{an}_sess-{sess_key}.json", "w") as f: # Creates file based on f"{value}" ("w", truncates file) saves as 'f'
                         json.dump(desc, f, indent=2) # Dumps 'desc' variable into 'f'.json file 
@@ -78,21 +78,18 @@ for k in sessions: # Loops the session keys through the following function:
                         cur_df = cur_df.assign(participant_id=partid)
                         cur_df = cur_df.set_index("participant_id")
                         cur_df.to_csv(output_dir / f"{an}_sess-F.tsv", sep="\t") # Saves category in .tsv file based on f'{}' variables
-        
-        else:
-            for an in assessments: # 'an' = assessment name AKA for item in assessments list
-                partid = [c for c in df.columns if subid in c]
-                subscales = [c for c in df.columns if an in c]
+
+            else:
                 #subscales = [c for c in df.columns if an in c]  # Identifies columns containing 'an' AKA item in 'assessments'
                 subscales = [c for c in subscales if sess_key in c] # Further identifies columns containing the session key 
                 if subscales: # If subscales exist run this loop:
                     desc = {c.replace(sess_key, ""): template # Removes session indicator for .json file
                             for c in subscales if sess_key in c} # Only does the above for the following
-                
+
                     desc["MeasurementToolMetadata"] = MeasurementToolMetadata # Adds 'measurementoolmetadata' to existing .json file
                     with open(output_dir / f"{an}_sess-{sess_key}.json", "w") as f: # Creates file based on f"{value}" ("w", truncates file) saves as 'f'
                         json.dump(desc, f, indent=2) # Dumps 'desc' variable into 'f'.json file 
-                    
+
                         cur_df = df[subscales].fillna("n/a") # Fills blank cells in selected columns off the dataframe with 'n/a'
                         partid = df[partid].fillna("n/a")
                         cur_df = cur_df.assign(participant_id=partid)
