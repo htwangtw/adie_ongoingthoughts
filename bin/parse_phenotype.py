@@ -8,15 +8,15 @@ import json
 path = Path.cwd()
 file = ("adie-questionnaires_patients.tsv")
 df = os.path.join(path, file)
-output_dir = (path / "patients_with_subid")
+output_dir = (path / "test")
 
 # Load .tsv file into dataframe
 df = pd.read_csv(df, sep='\t')
 
 # Denote session names for parsing assessment data
 sessions = {
-    "BL": "baseline",
-    "F": "oneweek",  # confirmed by lisa
+    "BL_": "baseline",
+    "F_": "oneweek",  # confirmed by lisa
     "_3mf": "threemonth",
     "FY": "oneyear"
 }
@@ -55,23 +55,22 @@ for name, cat in zip(["demographics", "height_weight", "diagnosis", "admin"], # 
     cur_df = df[cat].fillna("n/a").set_index("participant_id") # Fills blank cells in selected category of df with 'n/a'
     cur_df.to_csv(output_dir / f"{name}.tsv", sep="\t") # Saves category in .tsv file based on f'{name}' variable
 
-for sess_key in sessions: # Loops the session keys through the following function:
-    if sess_key == "F":
-        sess_key = "F_"
+for old_key, new_key in sessions.items(): # Loops the session keys through the following function:
     for an in assessments: # 'an' = assessment name AKA for item in assessments list
         partid = [c for c in df.columns if subid in c]
-        subscales = [c for c in df.columns if an in c]
-        #subscales = [c for c in df.columns if an in c]  # Identifies columns containing 'an' AKA item in 'assessments'
-        subscales = [c for c in subscales if sess_key in c] # Further identifies columns containing the session key 
-        if subscales:
+        subscales = [c for c in df.columns if an in c] # Identifies columns containing 'an' AKA item in 'assessments'
+        subscales = [c for c in subscales if old_key in c] # Further identifies columns containing the session key 
+        if subscales:    
             cur_df = df[subscales].fillna("n/a") # Fills blank cells in selected columns off the dataframe with 'n/a'
             partid = df[partid].fillna("n/a")
             cur_df = cur_df.assign(participant_id=partid)
             cur_df = cur_df.set_index("participant_id")
-            cur_df.to_csv(output_dir / f"{an}_sess-{sess_key}.tsv", sep="\t") # Saves category in .tsv file based on f'{}' variables
+            
+            cur_df.to_csv(output_dir / f"{an}_sess-{new_key}.tsv", sep="\t") # Saves category in .tsv file based on f'{}' variables
 
-            desc = {c.replace(sess_key, ""): template # Removes session indicator for .json file
-                    for c in subscales if sess_key in c} # Only does the above for the following
+            desc = {c.replace(old_key, ""): template # Removes session indicator for .json file
+                    for c in subscales if old_key in c} # Only does the above for the following
             desc["MeasurementToolMetadata"] = MeasurementToolMetadata # Adds 'measurementoolmetadata' to existing .json file
-            with open(output_dir / f"{an}_sess-{sess_key}.json", "w") as f: # Creates file based on f"{value}" ("w", truncates file) saves as 'f'
-                json.dump(desc, f, indent=2) # Dumps 'desc' variable into 'f'.json file 
+            with open(output_dir / f"{an}_sess-{new_key}.json", "w") as f: # Creates file based on f"{value}" ("w", truncates file) saves as 'f'
+                json.dump(desc, f, indent=2) # Dumps 'desc' variable into 'f'.json file
+
