@@ -2,7 +2,7 @@ from pathlib import Path
 import pandas as pd
 import os
 import json
-
+import re
 
 # Create input/output variables
 path = Path.cwd()
@@ -16,13 +16,14 @@ df = pd.read_csv(df, sep='\t')
 # Denote session names for parsing assessment data
 sessions = {
     "BL_": "baseline",
-    "F_": "oneweek",  # confirmed by lisa
+    "F_": "oneweek", 
     "_3mf": "threemonth",
     "FY": "oneyear"
 }
 
-subid = "participant_id"
 # curate session unrelated labels, pull column names from dataframe
+subid = "participant_id"
+
 demographics = ["participant_id", "Age", "GenderID", "GenderBirth", "GenderFit", "Education", "Handedness", "Nationality"]
 
 height_weight = ["participant_id", "Height", "Weight"]
@@ -45,32 +46,32 @@ MeasurementToolMetadata = {
             "TermURL": "A URL to an entity in an ontology corresponding to this tool"
             }
 
-# Create separate files for session unrelated groups
-for name, cat in zip(["demographics", "height_weight", "diagnosis", "admin"], # Variable 'name' string. Function 'zip' allows multiple column names into for loop
-    [demographics, height_weight, diagnosis, admin]): # Variable 'cat' selects category
-    # Create variable desc for .json file    
-    desc = {c: template for c in cat} # [Column name: template] looped for column name in category (c = item in list)
-    with open(output_dir / f"{name}.json", "w") as f: # Creates file based on f"{value}" ("w", truncates file) saves as 'f'
-        json.dump(desc, f, indent=2) # Dumps desc variable into 'f'.json file 
-    cur_df = df[cat].fillna("n/a").set_index("participant_id") # Fills blank cells in selected category of df with 'n/a'
-    cur_df.to_csv(output_dir / f"{name}.tsv", sep="\t") # Saves category in .tsv file based on f'{name}' variable
+# Curate non-session related data and parse into separate .tsv & .json files
+for name, cat in zip(["demographics", "height_weight", "diagnosis", "admin"], 
+    [demographics, height_weight, diagnosis, admin]): 
+    desc = {c: template for c in cat} 
+    with open(output_dir / f"{name}.json", "w") as f: 
+        json.dump(desc, f, indent=2) 
+    cur_df = df[cat].fillna("n/a").set_index("participant_id") 
+    cur_df.to_csv(output_dir / f"{name}.tsv", sep="\t") 
 
-for old_key, new_key in sessions.items(): # Loops the session keys through the following function:
-    for an in assessments: # 'an' = assessment name AKA for item in assessments list
+# curate session related data and parse into separate .tsv & .json files
+for old_key, new_key in sessions.items(): 
+    for an in assessments: 
         partid = [c for c in df.columns if subid in c]
-        subscales = [c for c in df.columns if an in c] # Identifies columns containing 'an' AKA item in 'assessments'
-        subscales = [c for c in subscales if old_key in c] # Further identifies columns containing the session key 
+        subscales = [c for c in df.columns if an in c] 
+        subscales = [c for c in subscales if old_key in c] 
         if subscales:    
-            cur_df = df[subscales].fillna("n/a") # Fills blank cells in selected columns off the dataframe with 'n/a'
+            cur_df = df[subscales].fillna("n/a") 
             partid = df[partid].fillna("n/a")
             cur_df = cur_df.assign(participant_id=partid)
             cur_df = cur_df.set_index("participant_id")
-            
-            cur_df.to_csv(output_dir / f"{an}_sess-{new_key}.tsv", sep="\t") # Saves category in .tsv file based on f'{}' variables
+            cur_df.columns = [re.sub(old_key, '', col) for col in cur_df]
+            cur_df.to_csv(output_dir / f"{an}_sess-{new_key}.tsv", sep="\t") 
 
-            desc = {c.replace(old_key, ""): template # Removes session indicator for .json file
-                    for c in subscales if old_key in c} # Only does the above for the following
-            desc["MeasurementToolMetadata"] = MeasurementToolMetadata # Adds 'measurementoolmetadata' to existing .json file
-            with open(output_dir / f"{an}_sess-{new_key}.json", "w") as f: # Creates file based on f"{value}" ("w", truncates file) saves as 'f'
-                json.dump(desc, f, indent=2) # Dumps 'desc' variable into 'f'.json file
+            desc = {c.replace(old_key, ""): template 
+                    for c in subscales if old_key in c}
+            desc["MeasurementToolMetadata"] = MeasurementToolMetadata
+            with open(output_dir / f"{an}_sess-{new_key}.json", "w") as f: 
+                json.dump(desc, f, indent=2) 
 
