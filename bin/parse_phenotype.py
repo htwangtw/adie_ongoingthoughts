@@ -8,7 +8,7 @@ import re
 path = Path.cwd()
 file = ("adie-questionnaires_patients.tsv")
 df = os.path.join(path, file)
-output_dir = (path / "test")
+output_dir = (path / "results")
 
 # Load .tsv file into dataframe
 df = pd.read_csv(df, sep='\t')
