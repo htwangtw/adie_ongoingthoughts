@@ -6,7 +6,8 @@ Aim of this script is to convert CISC ID to ADIE ID in directory and file names
 
 
 Usage:
-add how to use in the command line
+When running from the command line, the user is asked to input the parent directory which
+contains the subject directories they wish to convert.
 """
 
 import pandas as pd
@@ -22,21 +23,18 @@ import glob
 # TODO: construct CISC2 file path
 # TODO: change session- labels to be 'baseline' or 'intervention'
 
-
-scriptpath = os.path.realpath(__file__)
-print ('Script path =',scriptpath)
-# Get path to ADIE dir - make it universal 
+# Get path to ADIE dir - this is universal and should work for anyone running on the 
+# SN (Sussex neuroscience) server
 adie_dir = ('/research/cisc2/projects/critchley_adie/')
-#adie_dir = os.path.dirname(os.path.dirname(os.path.dirname(scriptpath)))
-print('Main ADIE Directory =',adie_dir)
+
 # import conversion txt file 
 txtfile = os.path.join(adie_dir, 'BIDS_data/sourcedata/adie_idconvert.txt')
 print ('Conversion txt file path =',txtfile)
 
 # convert this to dictonary, where key = CISC and val = ADIE 
 def convert_dict(txtfile):  
-    rename = {}
     with open(txtfile) as f:
+        rename = {}
         for line in f:
             (key,val)=line.split()
             #Remove any non-digit i.e. 'CISC'
