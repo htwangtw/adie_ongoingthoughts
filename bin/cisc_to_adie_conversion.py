@@ -26,7 +26,7 @@ import glob
 scriptpath = os.path.realpath(__file__)
 print ('Script path =',scriptpath)
 # Get path to ADIE dir - make it universal 
-adie_dir = ('research/cisc2/projects/critchley_adie/')
+adie_dir = ('/research/cisc2/projects/critchley_adie/')
 #adie_dir = os.path.dirname(os.path.dirname(os.path.dirname(scriptpath)))
 print('Main ADIE Directory =',adie_dir)
 # import conversion txt file 
@@ -136,7 +136,6 @@ while ok == 'n':
     ok = input("do you wish to proceed? [n / y] \n")
 
 print (ok)
-txtfile = "/Volumes/cisc2/projects/critchley_adie/BIDS_data/sourcedata/adie_idconvert.txt"
 
 # Loop through each subject 
 for sub in subdirs:
