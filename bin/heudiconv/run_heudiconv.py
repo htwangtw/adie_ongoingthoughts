@@ -15,9 +15,8 @@ import os
 # TODO: Change session nameto be 0,1,2
 def subses(sub):
     drs=glob.glob('/research/cisc2/projects/critchley_adie/*/CISC{}/*'.format(sub))
-    ses = [os.path.split(d)[1] for d in drs if 'DS_Store' not in d]
-    # save names of session level directories 
-    return ses
+    # save names of session level directories
+    return [os.path.split(d)[1] for d in drs if 'DS_Store' not in d]
 
 # Run heudiconv with session flag
 def hc(sub,ses, out):
