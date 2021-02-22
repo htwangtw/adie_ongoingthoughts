@@ -1,5 +1,13 @@
-# Script to convert CISC ID to ADIE ID in directory and file names 
-# This is only tested on directories/files with a BIDS naming convention
+"""
+#!/usr/bin/env/ python 
+
+Author: Will Strawson and Hao-Ting Wang, last updated 22-02-2021
+Aim of this script is to convert CISC ID to ADIE ID in directory and file names 
+
+
+Usage:
+add how to use in the command line
+"""
 
 import pandas as pd
 import os 
@@ -11,22 +19,22 @@ import glob
 
 
 # Script has to run from within critchely_adie/ cisc2 dir for the paths to work
-#TODO: construct CISC2 file path
+# TODO: construct CISC2 file path
 # TODO: change session- labels to be 'baseline' or 'intervention'
-
 
 
 scriptpath = os.path.realpath(__file__)
 print ('Script path =',scriptpath)
-# Get path to ADIE dir
-adie_dir = os.path.dirname(os.path.dirname(os.path.dirname(scriptpath)))
+# Get path to ADIE dir - make it universal 
+adie_dir = ('research/cisc2/projects/critchley_adie/')
+#adie_dir = os.path.dirname(os.path.dirname(os.path.dirname(scriptpath)))
 print('Main ADIE Directory =',adie_dir)
 # import conversion txt file 
 txtfile = os.path.join(adie_dir, 'BIDS_data/sourcedata/adie_idconvert.txt')
 print ('Conversion txt file path =',txtfile)
 
 # convert this to dictonary, where key = CISC and val = ADIE 
-def convert_dict(txtfile):  # sourcery skip: move-assign
+def convert_dict(txtfile):  
     rename = {}
     with open(txtfile) as f:
         for line in f:
@@ -111,16 +119,27 @@ def compare(numf_old,numf_new,dir_to_del):
 
 # TODO: F7 - Chnage participants.tsv 
 
-
-
 # -------------- RUN FUNCTIONS -------------- #
 # This bit will be in /test/ directory 
 # For now, just loop over one subject for testing purposes 
 # sourcery skip
-subdirs = os.path.join(adie_dir, 'wills_data/test_data/sub-*')
+
+# Allow user to input the subdirs 
+ok = 'n'
+while ok == 'n':
+    subdirs_parent = input("Input the path to the directory that contains the subject directories you wish to convert:\n")
+    subdirs_srch = subdirs_parent+ '/sub-*'
+    subdirs = glob.glob(subdirs_srch)
+    print(subdirs_srch)
+    print("The subject directories that will be converted are:")
+    [print("{}".format(os.path.split(i)[1])) for i in subdirs]
+    ok = input("do you wish to proceed? [n / y] \n")
+
+print (ok)
+txtfile = "/Volumes/cisc2/projects/critchley_adie/BIDS_data/sourcedata/adie_idconvert.txt"
 
 # Loop through each subject 
-for sub in glob.glob(subdirs):
+for sub in subdirs:
     # F5 - Store number of files in original directory 
     numf_old = numfiles(sub)
     # Get dict 
