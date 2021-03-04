@@ -31,8 +31,10 @@ def submatch(src,dst,sub):
     sub_dst = os.path.join(dst,sub)
     if os.path.exists(sub_src) == False:
         print('ERROR: Source subject directory not found ({})'.format(sub_src))
-    elif os.path.exists(sub_dst) == False:
+         
+    if os.path.exists(sub_dst) == False:
         print('ERROR: Source subject directory not found ({})'.format(sub_dst))
+        
     else:
         return sub_src, sub_dst
         print (sub_src, sub_dst)
@@ -58,7 +60,7 @@ def sesmatch(sub_src,sub_dst):
 	# second date == 'posttraining
 
 
-# F4 - create session level destination directorys with new label name 
+# F4 - create session level destination directorys paths with new label name 
 def sescreate(src_sessions,dst_sessions):
     # pair up each src session with dst session using dict 
 
@@ -80,14 +82,35 @@ def sescreate(src_sessions,dst_sessions):
         # create posttraining dir
         pt_ses = os.path.join(os.path.dirname(baseline_ses),'posttraining')
         dir_pairs = {src_sessions[0]:baseline_ses, src_sessions[1]:pt_ses}
-    
-    print(dir_pairs)
 
     
+    return dir_pairs    
+
+# F5 - make session level directory (if doesn't already exist)
+
+def make_ses_dir(dir_pairs):
+    # If destiation session directory doesn't exists, make it.
+    for k,v in dir_pairs.items():
+        if os.path.exists(dir_pairs[k]) == False:
+            print ('Creating the following directory:',dir_pairs[k])
+            os.mkdir(dir_pairs[k])
+        elif os.path.exists(dir_pairs[k]) == True:
+            print ('Following directory already exists:', dir_pairs[k])
 
 
+# F6 - create 'neuro' dir inside session dir
 
-# F5 - create 'neuro' dir inside session dir
+def make_neuro(dir_pairs):
+    for k,v in dir_pairs.items():
+        dir_pairs[k] = os.path.join(v,'neuro')
+        if os.path.exists(dir_pairs[k]) == False:
+            print ('neuro/ does not exist yet - creating now')
+            os.mkdir(dir_pairs[k])
+        elif os.path.exists(dir_pairs[k]) == True:
+            print ('neuro/ already exists')
+
+    
+    
 
 # F5 - copy files from source to dest 
 # inside correct session dir, and inside new neuro dir
