@@ -85,7 +85,7 @@ for old_key, new_key in sessions.items():
             cur_df = cur_df.assign(participant_id=partid)
             cur_df = cur_df.set_index("participant_id")
             cur_df.columns = [re.sub(old_key, '', col) for col in cur_df]
-            cur_df.to_csv(output_dir / f"{an}_sess-{new_key}.tsv", sep="\t") 
+            cur_df.to_csv(output_dir / f"{an}_ses-{new_key}.tsv", sep="\t") 
 
             desc = {c.replace(old_key, ""): template 
                     for c in subscales if old_key in c}
