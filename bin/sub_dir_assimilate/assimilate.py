@@ -28,6 +28,9 @@ for idx,sub in enumerate(subs):
     # F6 - Make neuro directory path
     make_neuro(dir_pairs)
 
+    # F7 - Copy
+    copydirs(dir_pairs)
+
     print ('---------------------------------------------------------------------')
 
 

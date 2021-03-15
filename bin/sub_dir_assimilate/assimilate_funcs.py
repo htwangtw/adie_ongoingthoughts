@@ -110,9 +110,9 @@ def make_neuro(dir_pairs):
             print ('neuro/ already exists')
 
     
-    
-
 # F5 - copy files from source to dest 
+def copydirs(dir_pairs):
+   print(dir_pairs)
 # inside correct session dir, and inside new neuro dir
 
 
