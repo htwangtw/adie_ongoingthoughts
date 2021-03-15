@@ -2,18 +2,20 @@
 #coding=utf-8
 """
 Author: Will Strawson and Hao-Ting Wang, last updated 26-02-2021
-Aim of this script is to: 
+Aim of this script is to create functions which: 
 (i) assimilate fMRI data from critchley_adie/wills_data/bids into 
 the critchley_adie/BIDS_data directory.
 (ii) change the current session names to match those in BIDS_data/sub-*/
 (i.e from dates to session labels)
 
-Usage:
+
+
 
 """
 
 import os
 import glob
+from subprocess import call
 
 # F1 - retrieve the relevent universal paths
 def paths():
@@ -37,7 +39,7 @@ def submatch(src,dst,sub):
         
     else:
         return sub_src, sub_dst
-        print (sub_src, sub_dst)
+        #print (sub_src, sub_dst)
 
 # F3 - match session level directories 
 def sesmatch(sub_src,sub_dst):
@@ -54,11 +56,6 @@ def sesmatch(sub_src,sub_dst):
     print ('Behavioural sessions: {}'.format(ses_names))
 
     return src_sessions, dst_sessions
-
-    #
-	# earliest date == 'baseline'
-	# second date == 'posttraining
-
 
 # F4 - create session level destination directorys paths with new label name 
 def sescreate(src_sessions,dst_sessions):
@@ -110,10 +107,20 @@ def make_neuro(dir_pairs):
             print ('neuro/ already exists')
 
     
-# F5 - copy files from source to dest 
+# F7 - copy files from source to dest 
 def copydirs(dir_pairs):
-   print(dir_pairs)
-# inside correct session dir, and inside new neuro dir
+    for k,v in dir_pairs.items():
+        # copy files inside the session directory, not the session directory itself due to date-based name
+        sources = glob.glob(k+'/*')
+        destination = v
+        if len(os.listdir(v)) == 0:
+            print('Copying:',sources,'\n','to:',destination)
+            # copy all files in sources list 
+            [call(['cp','-a','-R',i,destination]) for i in sources]          
+        else:
+            print('Destination directory not empty',os.listdir(v))
+
+
 
 
 
