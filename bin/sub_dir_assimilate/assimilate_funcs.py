@@ -8,9 +8,6 @@ the critchley_adie/BIDS_data directory.
 (ii) change the current session names to match those in BIDS_data/sub-*/
 (i.e from dates to session labels)
 
-
-
-
 """
 
 import os
