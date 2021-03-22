@@ -74,7 +74,6 @@ def sescreate(src_sessions,dst_sessions):
         pt_ses = os.path.join(os.path.dirname(baseline_ses),'posttraining')
         dir_pairs = {src_sessions[0]:baseline_ses, src_sessions[1]:pt_ses}
 
-    
     return dir_pairs    
 
 # F5 - make session level directory (if doesn't already exist)
