@@ -30,9 +30,6 @@ def submatch(src,dst,sub):
     sub_dst = os.path.join(dst,sub)
     if os.path.exists(sub_src) == False:
         print('ERROR: Source subject directory not found ({})'.format(sub_src))
-         
-    if os.path.exists(sub_dst) == False:
-        print('ERROR: Source subject directory not found ({})'.format(sub_dst))
         
     else:
         return sub_src, sub_dst
