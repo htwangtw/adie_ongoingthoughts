@@ -1,5 +1,5 @@
 test/data/bids_test/derivatives/*
-
+**/.DS_Store
 # editor
 .vscode
 .*.sw?
