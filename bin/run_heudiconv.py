@@ -19,18 +19,17 @@ repo_root = Path(__file__).parent
 # TODO: Change session nameto be 0,1,2
 def subses(sub):
     drs=glob.glob('/research/cisc2/projects/critchley_adie/*/CISC{}/*'.format(sub))
-    ses = [os.path.split(d)[1] for d in drs if 'DS_Store' not in d]
     # save names of session level directories
-    return ses
+    return [os.path.split(d)[1] for d in drs if 'DS_Store' not in d]
 
 # Run heudiconv with session flag
 def hc(sub,ses, out, getmetadata):  # sourcery skip: move-assign
     data = '/research/cisc2/projects/critchley_adie/*/CISC{subject}/{session}/*/*'
     # Let the user define this
     out = output_dir
-    heuristic_path = str(repo_root / 'heuristic/heuristic.py')
     # If metadata already exists...
     if getmetadata == 'n':
+        heuristic_path = str(repo_root / 'heuristic/heuristic.py')
         for s in ses:
             print (len(glob.glob('/research/cisc2/projects/critchley_adie/*/CISC{}/{}/*/*'.format(sub,s))))
             subprocess.call(['heudiconv','-d',data,'-f',heuristic_path,'-s',sub,'-ss',s,'-c','dcm2niix','-o',out, '-b','--overwrite'])

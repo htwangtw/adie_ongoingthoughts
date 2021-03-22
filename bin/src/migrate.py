@@ -14,7 +14,7 @@ import os
 import glob
 from subprocess import call
 
-def paths():  # get_paths
+def get_paths():  
     """retrieve the relevent universal paths"""
     base = '/research/cisc2/projects/critchley_adie/'
     # source directory - wills_data/bids
@@ -23,8 +23,8 @@ def paths():  # get_paths
     dst = os.path.join(base,'BIDS_data/')
     return src, dst
 
-# F2 - match individuals subjects directories in source and destination
 def submatch(src,dst,sub):
+    """rmatch individuals subjects directories in source and destination"""
     # get subject directory in src and dest
     sub_src = os.path.join(src,sub)
     sub_dst = os.path.join(dst,sub)
@@ -35,8 +35,8 @@ def submatch(src,dst,sub):
         return sub_src, sub_dst
         #print (sub_src, sub_dst)
 
-# F3 - match session level directories
 def sesmatch(sub_src,sub_dst):
+    """match session level directories"""
     # how many src session dirs
     src_sessions = glob.glob(os.path.join(sub_src,'ses-*'))
     print (src_sessions)
@@ -51,10 +51,9 @@ def sesmatch(sub_src,sub_dst):
 
     return src_sessions, dst_sessions
 
-# F4 - create session level destination directorys paths with new label name
 def sescreate(src_sessions,dst_sessions):
+    """create session level destination directorys paths with new label name"""
     # pair up each src session with dst session using dict
-
     # extract baseline session path
     baseline_ses = [i for i in dst_sessions if 'baseline' in i]
     try:
@@ -76,9 +75,8 @@ def sescreate(src_sessions,dst_sessions):
 
     return dir_pairs
 
-# F5 - make session level directory (if doesn't already exist)
-
 def make_ses_dir(dir_pairs):
+    """make session level directory (if doesn't already exist)"""
     # If destiation session directory doesn't exists, make it.
     for k,v in dir_pairs.items():
         if os.path.exists(dir_pairs[k]) == False:
@@ -87,10 +85,8 @@ def make_ses_dir(dir_pairs):
         elif os.path.exists(dir_pairs[k]) == True:
             print ('Following directory already exists:', dir_pairs[k])
 
-
-# F6 - create 'neuro' dir inside session dir
-
 def make_neuro(dir_pairs):
+"""create 'neuro' dir inside session dir"""
     for k,v in dir_pairs.items():
         dir_pairs[k] = os.path.join(v,'neuro')
         if os.path.exists(dir_pairs[k]) == False:
@@ -99,9 +95,8 @@ def make_neuro(dir_pairs):
         elif os.path.exists(dir_pairs[k]) == True:
             print ('neuro/ already exists')
 
-
-# F7 - copy files from source to dest
 def copydirs(dir_pairs):
+"""copy files from source to dest"""
     for k,v in dir_pairs.items():
         # copy files inside the session directory, not the session directory itself due to date-based name
         sources = glob.glob(k+'/*')
