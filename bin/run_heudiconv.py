@@ -24,32 +24,42 @@ def subses(sub):
     return ses
 
 # Run heudiconv with session flag
-def hc(sub,ses, out):
+def hc(sub,ses, out, getmetadata):  # sourcery skip: move-assign
     data = '/research/cisc2/projects/critchley_adie/*/CISC{subject}/{session}/*/*'
     # Let the user define this
     out = output_dir
     heuristic_path = str(repo_root / 'heuristic/heuristic.py')
-
-    for s in ses:
-        print (len(glob.glob('/research/cisc2/projects/critchley_adie/*/CISC{}/{}/*/*'.format(sub,s))))
-
-        subprocess.call(['heudiconv','-d',data,'-f',heuristic_path,'-s',sub,'-ss',s,'-c','dcm2niix','-o',out, '-b','--overwrite'])
-
+    # If metadata already exists...
+    if getmetadata == 'n':
+        for s in ses:
+            print (len(glob.glob('/research/cisc2/projects/critchley_adie/*/CISC{}/{}/*/*'.format(sub,s))))
+            subprocess.call(['heudiconv','-d',data,'-f',heuristic_path,'-s',sub,'-ss',s,'-c','dcm2niix','-o',out, '-b','--overwrite'])
+    # If metadata doesn't yet exist        
+    elif getmetadata == 'y':
+        for s in ses:
+            print (len(glob.glob('/research/cisc2/projects/critchley_adie/*/CISC{}/{}/*/*'.format(sub,s))))
+            subprocess.call(['heudiconv','-d',pth,'-f','convertall','-s',sub,'-ss',s,'-c','none','-o',out])
+      
 
 if __name__ == "__main__":
     ### Run functions ###
     # Get all subs
     output_dir = input("Please input the output directory path: \n")
 
-    subs = glob.glob('/research/cisc2/projects/critchley_adie/*_dicoms/CISC*')
+    getmetadata = input("Do you need to get metadata first? (y/n)?")
 
-    #extract just sub name
-    subs = [os.path.split(i)[1] for i in subs]
-    subs = [i.replace('/','') for i in subs]
-    subs = [i.replace('CISC','') for i in subs]
+    if getmetadata == 'n':
+        subs = glob.glob('/research/cisc2/projects/critchley_adie/*_dicoms/CISC*')
+        #extract just sub name
+        subs = [os.path.split(i)[1] for i in subs]
+        subs = [i.replace('/','') for i in subs]
+        subs = [i.replace('CISC','') for i in subs]
 
-    print ("Number of subjects:",len(subs))
-    print ("List of subjects:\n",subs)
+        print ("Number of subjects:",len(subs))
+        print ("List of subjects:\n",subs)
+
+    elif getmetadata == 'y':
+        subs = input("Which subject would you like to use to generate metadata?\n Note: Only numbers from ID are needed (e.g. 1234 not CISC-1234")
 
     for idx,sub in enumerate(subs):
         ses = subses(sub)
