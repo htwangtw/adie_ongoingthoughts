@@ -1,9 +1,9 @@
 """
 Author: Will Strawson and Hao-Ting Wang, last updated 22/03/2021
 
-Aim: to reveal basic descriptives of the BIDS data set
-(i) How many subjects that completed neuroimaging have T1s?
-(ii) How many subjects that have completed neuroimaging completed MW task?
+Aim: to reveal basic descriptives of the BIDS data set re: mind wandering and T1 scans 
+Usage: running the script in terminal will reveal important details and also relevent dataframe.
+Must be run from within SN analysis server due to paths.
 
 """
 
@@ -12,13 +12,13 @@ import os
 import pandas as pd
 pd.set_option('display.max_rows', 1000)
 
-bids = glob.glob('/Volumes/cisc2/projects/critchley_adie/BIDS_data/sub-*')
-neuro_baseline = glob.glob('/Volumes/cisc2/projects/critchley_adie/BIDS_data/sub-*/ses-baseline/neuro')
-neuro_posttraining = glob.glob('/Volumes/cisc2/projects/critchley_adie/BIDS_data/sub-*/posttraining/neuro')
-t1_baseline = glob.glob('/Volumes/cisc2/projects/critchley_adie/BIDS_data/sub-*/ses-baseline/neuro/anat/sub-*_run-00*_T1w.nii.gz')
-t1_posttraining = glob.glob('/Volumes/cisc2/projects/critchley_adie/BIDS_data/sub-*/posttraining/neuro/anat/sub-*_run-00*_T1w.nii.gz')
-mw_baseline = glob.glob('/Volumes/cisc2/projects/critchley_adie/BIDS_data/sub-*/ses-baseline/neuro/func/sub-*_task-mw_run-00*_bold.nii.gz')
-mw_posttraining = glob.glob('/Volumes/cisc2/projects/critchley_adie/BIDS_data/sub-*/posttraining/neuro/func/sub-*_task-mw_run-00*_bold.nii.gz')
+bids = glob.glob('/research/cisc2/projects/critchley_adie/BIDS_data/sub-*')
+neuro_baseline = glob.glob('/research/cisc2/projects/critchley_adie/BIDS_data/sub-*/ses-baseline/neuro')
+neuro_posttraining = glob.glob('/research/cisc2/projects/critchley_adie/BIDS_data/sub-*/posttraining/neuro')
+t1_baseline = glob.glob('/research/cisc2/projects/critchley_adie/BIDS_data/sub-*/ses-baseline/neuro/anat/sub-*_run-00*_T1w.nii.gz')
+t1_posttraining = glob.glob('/research/cisc2/projects/critchley_adie/BIDS_data/sub-*/posttraining/neuro/anat/sub-*_run-00*_T1w.nii.gz')
+mw_baseline = glob.glob('/research/cisc2/projects/critchley_adie/BIDS_data/sub-*/ses-baseline/neuro/func/sub-*_task-mw_run-00*_bold.nii.gz')
+mw_posttraining = glob.glob('/research/cisc2/projects/critchley_adie/BIDS_data/sub-*/posttraining/neuro/func/sub-*_task-mw_run-00*_bold.nii.gz')
 
 def adie_con_split(paths):
     """function to reveal how many paths are from experimental and control subjects"""
@@ -94,4 +94,10 @@ print('Number of subjects with (i) both baseline and post-training MW and (ii) a
 partial = df[(df['mw_bl']!=0) & ((df['t1_bl']!=0) | (df['t1_pt']!=0))] 
 print('Number of subjects with (i) baseline MW and (ii) at least one T1: {}'.format(len(partial)))
 
+print(df)
 
+# Save - change to 1 if you want to save out the file again 
+save = 0 
+
+if save == 1:
+    df.to_csv('/research/cisc2/projects/critchley_adie/BIDS_data/t1_and_mw_neuro_descriptives.csv')
