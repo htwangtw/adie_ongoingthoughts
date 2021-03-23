@@ -18,7 +18,7 @@ import sys, os
 from pathlib import Path
 import glob
 
-from .src.convert import *
+from .adie.convert import *
 
 # Get path to ADIE dir - this is universal and should work for anyone running on the
 # SN (Sussex neuroscience) server

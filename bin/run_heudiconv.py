@@ -23,7 +23,7 @@ def subses(sub):
     return [os.path.split(d)[1] for d in drs if 'DS_Store' not in d]
 
 # Run heudiconv with session flag
-def hc(sub,ses, out, getmetadata):  # sourcery skip: move-assign
+def run_heudiconv_func(sub,ses, out, getmetadata):  # sourcery skip: move-assign
     data = '/research/cisc2/projects/critchley_adie/*/CISC{subject}/{session}/*/*'
     # Let the user define this
     out = output_dir
@@ -63,6 +63,6 @@ if __name__ == "__main__":
     for idx,sub in enumerate(subs):
         ses = subses(sub)
         print(sub,'\n',ses)
-        hc(sub,ses, output_dir)
+        run_heudiconv_func(sub,ses, output_dir)
         print (idx,'/',len(subs))
 
