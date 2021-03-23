@@ -10,6 +10,7 @@ Aim: to reveal basic descriptives of the BIDS data set
 import glob
 import os
 import pandas as pd
+pd.set_option('display.max_rows', 1000)
 
 bids = glob.glob('/Volumes/cisc2/projects/critchley_adie/BIDS_data/sub-*')
 neuro_baseline = glob.glob('/Volumes/cisc2/projects/critchley_adie/BIDS_data/sub-*/ses-baseline/neuro')
@@ -84,6 +85,13 @@ for i in subs:
     df['mw_pt'].loc[df['subjects']==i] = len(mw_pt[i])
 
 
+# How many subjects are there with at least one T1 scan and both pre-and post-training mind wandering scans?
+full = df[(df['mw_bl']!=0) & (df['mw_pt']!=0) & ((df['t1_bl']!=0) | (df['t1_pt']!=0))] 
+print('Number of subjects with (i) both baseline and post-training MW and (ii) at least one T1: {}'.format(len(full)))
 
+
+# How many subjects with at least one T1 and a baseline MW scan?
+partial = df[(df['mw_bl']!=0) & ((df['t1_bl']!=0) | (df['t1_pt']!=0))] 
+print('Number of subjects with (i) baseline MW and (ii) at least one T1: {}'.format(len(partial)))
 
 
