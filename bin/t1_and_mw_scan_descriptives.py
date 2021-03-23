@@ -4,6 +4,7 @@ Author: Will Strawson and Hao-Ting Wang, last updated 22/03/2021
 Aim: to reveal basic descriptives of the BIDS data set re: mind wandering and T1 scans 
 Usage: running the script in terminal will reveal important details and also relevent dataframe.
 Must be run from within SN analysis server due to paths.
+Script is self-contained i.e. no imported user functions.
 
 """
 

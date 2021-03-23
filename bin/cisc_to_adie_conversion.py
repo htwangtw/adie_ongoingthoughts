@@ -20,11 +20,6 @@ import glob
 
 from .src.convert import *
 
-
-# Script has to run from within critchely_adie/ cisc2 dir for the paths to work
-# TODO: construct CISC2 file path
-# TODO: change session- labels to be 'baseline' or 'intervention'
-
 # Get path to ADIE dir - this is universal and should work for anyone running on the
 # SN (Sussex neuroscience) server
 adie_dir = ('/research/cisc2/projects/critchley_adie/')
@@ -33,13 +28,7 @@ adie_dir = ('/research/cisc2/projects/critchley_adie/')
 txtfile = os.path.join(adie_dir, 'BIDS_data/sourcedata/adie_idconvert.txt')
 print ('Conversion txt file path =',txtfile)
 
-
-# TODO: F7 - Chnage participants.tsv
-
 # -------------- RUN FUNCTIONS -------------- #
-# This bit will be in /test/ directory
-# For now, just loop over one subject for testing purposes
-# sourcery skip
 
 # Allow user to input the subdirs
 ok = 'n'
@@ -51,8 +40,6 @@ while ok == 'n':
     print("The subject directories that will be converted are:")
     [print("{}".format(os.path.split(i)[1])) for i in subdirs]
     ok = input("do you wish to proceed? [n / y] \n")
-
-print (ok)
 
 # Loop through each subject
 for sub in subdirs:
