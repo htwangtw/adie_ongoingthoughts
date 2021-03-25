@@ -41,7 +41,7 @@ For developers:
 ```
 virtualenv env -p /path/to/bin/python3.8
 source env/bin/activate
-pip install -i dev-requirements.txt
+pip install -r dev-requirements.txt
 python setup.py
 ```
 
