@@ -18,7 +18,9 @@ import sys, os
 from pathlib import Path
 import glob
 
-from .adie.convert import *
+print('__file__={0:<35} | __name__={1:<20} | __package__={2:<20}'.format(__file__,__name__,str(__package__)))
+
+from ..adie.convert import *
 
 # Get path to ADIE dir - this is universal and should work for anyone running on the
 # SN (Sussex neuroscience) server
@@ -28,7 +30,7 @@ adie_dir = ('/research/cisc2/projects/critchley_adie/')
 txtfile = os.path.join(adie_dir, 'BIDS_data/sourcedata/adie_idconvert.txt')
 print ('Conversion txt file path =',txtfile)
 
-# -------------- RUN FUNCTIONS -------------- #
+
 
 # Allow user to input the subdirs
 ok = 'n'
