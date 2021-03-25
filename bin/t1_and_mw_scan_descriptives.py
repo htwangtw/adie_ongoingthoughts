@@ -13,13 +13,13 @@ import os
 import pandas as pd
 pd.set_option('display.max_rows', 1000)
 
-bids = glob.glob('/research/cisc2/projects/critchley_adie/BIDS_data/sub-*')
-neuro_baseline = glob.glob('/research/cisc2/projects/critchley_adie/BIDS_data/sub-*/ses-baseline/neuro')
-neuro_posttraining = glob.glob('/research/cisc2/projects/critchley_adie/BIDS_data/sub-*/posttraining/neuro')
-t1_baseline = glob.glob('/research/cisc2/projects/critchley_adie/BIDS_data/sub-*/ses-baseline/neuro/anat/sub-*_run-00*_T1w.nii.gz')
-t1_posttraining = glob.glob('/research/cisc2/projects/critchley_adie/BIDS_data/sub-*/posttraining/neuro/anat/sub-*_run-00*_T1w.nii.gz')
-mw_baseline = glob.glob('/research/cisc2/projects/critchley_adie/BIDS_data/sub-*/ses-baseline/neuro/func/sub-*_task-mw_run-00*_bold.nii.gz')
-mw_posttraining = glob.glob('/research/cisc2/projects/critchley_adie/BIDS_data/sub-*/posttraining/neuro/func/sub-*_task-mw_run-00*_bold.nii.gz')
+bids = glob.glob('/Volumes/cisc2/projects/critchley_adie/BIDS_data/sub-*')
+neuro_baseline = glob.glob('/Volumes/cisc2/projects/critchley_adie/BIDS_data/sub-*/ses-baseline/neuro')
+neuro_posttraining = glob.glob('/Volumes/cisc2/projects/critchley_adie/BIDS_data/sub-*/posttraining/neuro')
+t1_baseline = glob.glob('/Volumes/cisc2/projects/critchley_adie/BIDS_data/sub-*/ses-baseline/neuro/anat/sub-*_run-00*_T1w.nii.gz')
+t1_posttraining = glob.glob('/Volumes/cisc2/projects/critchley_adie/BIDS_data/sub-*/posttraining/neuro/anat/sub-*_run-00*_T1w.nii.gz')
+mw_baseline = glob.glob('/Volumes/cisc2/projects/critchley_adie/BIDS_data/sub-*/ses-baseline/neuro/func/sub-*_task-mw_run-00*_bold.nii.gz')
+mw_posttraining = glob.glob('/Volumes/cisc2/projects/critchley_adie/BIDS_data/sub-*/posttraining/neuro/func/sub-*_task-mw_run-00*_bold.nii.gz')
 
 def adie_con_split(paths):
     """function to reveal how many paths are from experimental and control subjects"""
@@ -99,6 +99,16 @@ print(df)
 
 # Save - change to 1 if you want to save out the file again 
 save = 0 
+# Merge with existing participants.tsv df 
 
 if save == 1:
-    df.to_csv('/research/cisc2/projects/critchley_adie/BIDS_data/t1_and_mw_neuro_descriptives.csv')
+    # import participants.tsv
+    participants = pd.read_csv('/Volumes/cisc2/projects/critchley_adie/BIDS_data/participants.tsv', sep='\t')
+    # change participant column to match 
+    df.rename(columns={'subjects':'participant_id'}, inplace=True)
+    # remove 'sub-' from df 
+    df['participant_id'] = df['participant_id'].str.replace('sub-','')
+    # merge
+    df_master = df.merge(participants,on='participant_id', how='outer')
+    df_master.to_csv('/Volumes/cisc2/projects/critchley_adie/BIDS_data/participants2.tsv')
+
