@@ -1,6 +1,6 @@
 
-# convert this to dictonary, where key = CISC and val = ADIE
 def convert_dict(txtfile):
+    """ convert this to dictonary, where key = CISC and val = ADIE"""
     with open(txtfile) as f:
         rename = {}
         for line in f:
@@ -9,12 +9,12 @@ def convert_dict(txtfile):
             rename[str(re.sub("[^0-9]","",key))] = str(val)
         return rename
 
-# Function 1 - consolidate sub- dir as string - bit redundent for now but may come in handy
 def subpaths(sub):
+    """ consolidate sub- dir as string - bit redundent for now but may come in handy"""
     return str(sub)
 
-# Function 2 - Extract CISC ID from directory, and match with ADIE ID
 def idmatch(r):
+    """ Extract CISC ID from directory, and match with ADIE ID"""
     # search for group of numbers after 'sub-'
     print(r)
     cid = re.search("sub-([0-9]*)",r).group(1)
@@ -25,8 +25,8 @@ def idmatch(r):
     elif cid not in rename.keys():
         print("CISC ID ({}) not recognized!".format(cid))
 
-# Function 3 - Create new directory with same structure
 def newdir(newid,root):
+    """ Create new directory with same structure"""
     # Recreat directory structure, using the parent sub- directory as input
     for dirpath, dirnames, filenames in os.walk(r):
         structure = os.path.join(newid,os.path.relpath(dirpath,root))
@@ -43,8 +43,8 @@ def newdir(newid,root):
         else:
             print("Directory already exists!")
 
-# Function 4 - Move files to new directories and rename
 def movefiles(sub,newid,cid):
+    """ Move files to new directories and rename"""
     # construct full CISC ID (with sub-)
     cid_full = 'sub-'+cid
     for root,dirs,files in os.walk(sub):
@@ -65,8 +65,8 @@ def movefiles(sub,newid,cid):
             elif 'DS_Store' in f:
                 continue
 
-# Function 5 - Count number of files in a sub- dir
 def numfiles(subdr):
+    """ Count number of files in a sub- dir"""
     # initialize variable
     numf = 0
     for root, dirs, files in os.walk(subdr):
@@ -74,8 +74,8 @@ def numfiles(subdr):
         return numf
     print ("Number of files in {}: {}".format(subdr,numf))
 
-# Function 6 - remove redundent dirs
 def compare(numf_old,numf_new,dir_to_del):
+    """ remove redundent dirs """
     if numf_old == numf_new:
         print ("Removing:",sub, '\n', 'Number of files equal - suggests successful conversion')
         shutil.rmtree(dir_to_del)

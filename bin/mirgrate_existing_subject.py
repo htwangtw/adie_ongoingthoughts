@@ -11,7 +11,7 @@ Usage: Set variable 'subs' to a list of filepaths that point to each subject BID
 """
 
 
-from .src.migrate import *
+from .adie.migrate import *
 import glob
 
 subs = glob.glob('/research/cisc2/projects/critchley_adie/wills_data/bids/sub-*')
