@@ -49,8 +49,8 @@ for sub in subdirs:
     numf_old = numfiles(sub)
     # Get dict
     rename = convert_dict(txtfile)
-    # F1 - List sub directory for searching
-    r = subpaths(sub)
+    # consolodate as string 
+    r = str(sub)
     # F2 - Extract CISC ID from root name, and match with ADIE ID
     # If CISC ID not recognized, return to start of loop and processnext subject
     try:

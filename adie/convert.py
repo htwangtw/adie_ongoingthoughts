@@ -1,4 +1,3 @@
-
 def convert_dict(txtfile):
     """ convert this to dictonary, where key = CISC and val = ADIE"""
     with open(txtfile) as f:
@@ -8,10 +7,6 @@ def convert_dict(txtfile):
             #Remove any non-digit i.e. 'CISC'
             rename[str(re.sub("[^0-9]","",key))] = str(val)
         return rename
-
-def subpaths(sub):
-    """ consolidate sub- dir as string - bit redundent for now but may come in handy"""
-    return str(sub)
 
 def idmatch(r):
     """ Extract CISC ID from directory, and match with ADIE ID"""
