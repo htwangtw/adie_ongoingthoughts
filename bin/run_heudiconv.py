@@ -15,7 +15,7 @@ from pathlib import Path
 
 repo_root = Path(__file__).parent
 
-def subses(sub):
+def gen_ses_label(sub):
     """Explicitly define session names from directory names"""
     drs=glob.glob('/research/cisc2/projects/critchley_adie/*/CISC{}/*'.format(sub))
     # save names of session level directories
@@ -72,7 +72,7 @@ if __name__ == "__main__":
         print (subs, '\ntype:', type(subs))
     
     for idx,sub in enumerate(subs):
-        ses = subses(sub)
+        ses = gen_ses_label(sub)
         print(sub,'\n',ses)
         run_heudiconv_func(sub,ses, output_dir, getmetadata)
         print (idx+1,'/',len(subs))
