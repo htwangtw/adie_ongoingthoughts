@@ -1,3 +1,7 @@
+import os
+import re
+import shutil
+
 def convert_dict(txtfile):
     """ convert this to dictonary, where key = CISC and val = ADIE"""
     with open(txtfile) as f:
@@ -8,10 +12,9 @@ def convert_dict(txtfile):
             rename[str(re.sub("[^0-9]","",key))] = str(val)
         return rename
 
-def idmatch(r):
+def idmatch(r,rename):
     """ Extract CISC ID from directory, and match with ADIE ID"""
     # search for group of numbers after 'sub-'
-    print(r)
     cid = re.search("sub-([0-9]*)",r).group(1)
     # match CISC ID with ADIE ID
     if cid in rename.keys():
@@ -23,7 +26,7 @@ def idmatch(r):
 def newdir(newid,root):
     """ Create new directory with same structure"""
     # Recreat directory structure, using the parent sub- directory as input
-    for dirpath, dirnames, filenames in os.walk(r):
+    for dirpath, dirnames, filenames in os.walk(root):
         structure = os.path.join(newid,os.path.relpath(dirpath,root))
         # Check to see if these new directories don't exist
         # if not, make the directory with the new ADIE names

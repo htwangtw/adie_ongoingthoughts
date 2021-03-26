@@ -20,7 +20,7 @@ import glob
 
 print('__file__={0:<35} | __name__={1:<20} | __package__={2:<20}'.format(__file__,__name__,str(__package__)))
 
-from ..adie.convert import *
+from adie.convert import *
 
 # Get path to ADIE dir - this is universal and should work for anyone running on the
 # SN (Sussex neuroscience) server
@@ -29,8 +29,6 @@ adie_dir = ('/research/cisc2/projects/critchley_adie/')
 # import conversion txt file
 txtfile = os.path.join(adie_dir, 'BIDS_data/sourcedata/adie_idconvert.txt')
 print ('Conversion txt file path =',txtfile)
-
-
 
 # Allow user to input the subdirs
 ok = 'n'
@@ -50,14 +48,16 @@ for sub in subdirs:
     # Get dict
     rename = convert_dict(txtfile)
     # consolodate as string 
+    print('rename var=',rename)
     r = str(sub)
+    print('r:',r)
     # F2 - Extract CISC ID from root name, and match with ADIE ID
     # If CISC ID not recognized, return to start of loop and processnext subject
     try:
-        newid,cid = idmatch(r)
+        newid,cid = idmatch(r, rename)
         print(newid,cid)
-    except:
-        print ("Error occured! Ignoring", sub)
+    except Exception as e:
+        print (e)
         continue
     # F3 - Recreate directory sturcture, using new ID names
     newdir(newid,r)
