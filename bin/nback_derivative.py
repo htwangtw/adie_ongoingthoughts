@@ -61,9 +61,10 @@ if not probe_json.is_file:
 
     es_probe = es_probe.reset_index().loc[:13, ["mwType", "stimPic", "Ans"]]
 
-    probes = {}
-    for a, full in es_probe.set_index(["mwType"]).iterrows():
-        probes[a] = {"question": full["stimPic"], "scale": full["Ans"]}
+    probes = {
+        a: {"question": full["stimPic"], "scale": full["Ans"]}
+        for a, full in es_probe.set_index(["mwType"]).iterrows()
+    }
 
     with open(probe_json) as f:
         json.dump(probes, f, indent=2)
@@ -71,8 +72,10 @@ if not probe_json.is_file:
 if not session_json.is_file:
     es_end = es_end.reset_index().loc[:, ["mwType", "stimPic", "Ans"]]
 
-    end = {}
-    for a, full in es_end.set_index(["mwType"]).iterrows():
-        end[a] = {"question": full["stimPic"], "scale": full["Ans"]}
+    end = {
+        a: {"question": full["stimPic"], "scale": full["Ans"]}
+        for a, full in es_end.set_index(["mwType"]).iterrows()
+    }
+
     with open(session_json) as f:
         json.dump(end, f, indent=2)
