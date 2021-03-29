@@ -10,12 +10,7 @@ When running from the command line, the user is asked to input the parent direct
 contains the subject directories they wish to convert.
 """
 
-import pandas as pd
 import os
-import re
-import shutil
-import sys, os
-from pathlib import Path
 import glob
 
 print(
@@ -24,7 +19,7 @@ print(
     )
 )
 
-from adie.convert import *
+from adie import convert
 
 # Get path to ADIE dir - this is universal and should work for anyone running on the
 # SN (Sussex neuroscience) server
@@ -50,29 +45,25 @@ while ok == "n":
 # Loop through each subject
 for sub in subdirs:
     # F5 - Store number of files in original directory
-    numf_old = numfiles(sub)
+    numf_old = convert.numfiles(sub)
     # Get dict
-    rename = convert_dict(txtfile)
+    rename = convert.convert_dict(txtfile)
     # consolodate as string
     print("rename var=", rename)
     r = str(sub)
     print("r:", r)
-    # F2 - Extract CISC ID from root name, and match with ADIE ID
+    # Extract CISC ID from root name, and match with ADIE ID
     # If CISC ID not recognized, return to start of loop and processnext subject
     try:
-        newid, cid = idmatch(r, rename)
+        newid, cid = convert.idmatch(r, rename)
         print(newid, cid)
     except Exception as e:
         print(e)
         continue
-    # F3 - Recreate directory sturcture, using new ID names
-    newdir(newid, r)
-    # F4 - Copy files from old to new structure, while renaming
-    movefiles(sub, newid, cid)
-    # F5 - Store number of files in new directory
-    numf_new = numfiles(os.path.join(os.path.dirname(sub), newid))
-    # F6 - Check if number of files in new sub dir is == to num files in original sub dir
-    compare(numf_old, numf_new, sub)
+    convert.newdir(newid, r)
+    convert.movefiles(sub, newid, cid)
+    numf_new = convert.numfiles(os.path.join(os.path.dirname(sub), newid))
+    convert.compare(numf_old, numf_new, sub)
     # Look prettier
     print(
         "\n",
