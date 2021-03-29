@@ -21,11 +21,11 @@ subs = [os.path.basename(i) for i in subs]
 
 for idx, sub in enumerate(subs):
     print(idx + 1, "/", len(subs))
-    src, dst = migrate.paths()
+    src, dst = migrate.get_paths()
     try:
         src, dst = migrate.submatch(src, dst, sub)
     except:
-        print(f"error when mating sub dirs {sub}")
+        print(f"error when mating sub dirs {sub}, skip")
         continue
     src, dst = migrate.sesmatch(src, dst)
     dir_pairs = migrate.sescreate(src, dst)

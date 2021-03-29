@@ -8,12 +8,6 @@ from pathlib import Path
 import os
 import pandas as pd
 
-# from adie.tests import get_test_data_path
-
-
-# bids_dir = Path(get_test_data_path())
-# subj = list(bids_dir.glob("sub-*"))
-
 
 def generate_participants(bids_root):
     subj = list(bids_root.glob("sub-*"))  # Lists directories
