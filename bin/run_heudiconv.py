@@ -43,9 +43,7 @@ def run_heudiconv_func(
             print(
                 len(
                     glob.glob(
-                        "/research/cisc2/projects/critchley_adie/*/CISC{}/{}/*/*".format(
-                            sub, s
-                        )
+                        f"/research/cisc2/projects/critchley_adie/*/CISC{sub}/{s}/*/*"
                     )
                 )
             )
@@ -75,9 +73,7 @@ def run_heudiconv_func(
             print(
                 len(
                     glob.glob(
-                        "/research/cisc2/projects/critchley_adie/*/CISC{}/{}/*/*".format(
-                            sub, s
-                        )
+                        f"/research/cisc2/projects/critchley_adie/*/CISC{sub}/{s}/*/*"
                     )
                 )
             )

@@ -18,12 +18,14 @@ subs = glob.glob(
     "/research/cisc2/projects/critchley_adie/wills_data/bids/sub-*"
 )
 subs = [os.path.basename(i) for i in subs]
+base = "/research/cisc2/projects/critchley_adie/"
+base_src = os.path.join(base, "wills_data/bids/")
+base_dst = os.path.join(base, "BIDS_data/")
 
 for idx, sub in enumerate(subs):
     print(idx + 1, "/", len(subs))
-    src, dst = migrate.get_paths()
     try:
-        src, dst = migrate.submatch(src, dst, sub)
+        src, dst = migrate.submatch(base_src, base_dst, sub)
     except:
         print(f"error when mating sub dirs {sub}, skip")
         continue

@@ -1,7 +1,7 @@
 """
 Author: Will Strawson and Hao-Ting Wang, last updated 22/03/2021
 
-Aim: to reveal basic descriptives of the BIDS data set re: mind wandering and T1 scans 
+Aim: to reveal basic descriptives of the BIDS data set re: mind wandering and T1 scans
 Usage: running the script in terminal will reveal important details and also relevent dataframe.
 Must be run from within SN analysis server due to paths.
 Script is self-contained i.e. no imported user functions.
@@ -11,6 +11,10 @@ Script is self-contained i.e. no imported user functions.
 import glob
 import os
 import pandas as pd
+
+
+# Save - set to True if updating output
+SAVE = False
 
 pd.set_option("display.max_rows", 1000)
 
@@ -58,20 +62,18 @@ print(
 )
 adie_con_split(neuro_baseline)
 print(
-    "Number of subs with posttraining/neuro directory: {}".format(
-        len(neuro_posttraining)
-    )
+    f"Number of subs with posttraining/neuro directory: {len(neuro_posttraining)}"
 )
 adie_con_split(neuro_posttraining)
 
-print("Number of T1s in ses-baseline: {}".format(len(t1_baseline)))
+print(f"Number of T1s in ses-baseline: {len(t1_baseline)}")
 adie_con_split(t1_baseline)
-print("Number of T1s in posttraining: {}".format(len(t1_posttraining)))
+print(f"Number of T1s in posttraining: {len(t1_posttraining)}")
 adie_con_split(t1_posttraining)
 
-print("Number of MW funcs in ses-baseline: {}".format(len(mw_baseline)))
+print(f"Number of MW funcs in ses-baseline: {len(mw_baseline)}")
 adie_con_split(mw_baseline)
-print("Number of MW funcs in posttraining: {}".format(len(mw_posttraining)))
+print(f"Number of MW funcs in posttraining: {len(mw_baseline)}")
 adie_con_split(mw_posttraining)
 
 # Create dataframe
@@ -120,27 +122,20 @@ full = df[
     & ((df["t1_bl"] != 0) | (df["t1_pt"] != 0))
 ]
 print(
-    "Number of subjects with (i) both baseline and post-training MW and (ii) at least one T1: {}".format(
-        len(full)
-    )
+    f"Number of subjects with (i) both baseline and post-training MW and (ii) at least one T1: {len(full)}"
 )
 
 
 # How many subjects with at least one T1 and a baseline MW scan?
 partial = df[(df["mw_bl"] != 0) & ((df["t1_bl"] != 0) | (df["t1_pt"] != 0))]
 print(
-    "Number of subjects with (i) baseline MW and (ii) at least one T1: {}".format(
-        len(partial)
-    )
+    f"Number of subjects with (i) baseline MW and (ii) at least one T1: {len(partial)}"
 )
 
 print(df)
 
-# Save - change to 1 if you want to save out the file again
-save = 0
 # Merge with existing participants.tsv df
-
-if save == 1:
+if SAVE:
     # import participants.tsv
     participants = pd.read_csv(
         "/research/cisc2/projects/critchley_adie/BIDS_data/participants.tsv",
@@ -153,5 +148,6 @@ if save == 1:
     # merge
     df_master = df.merge(participants, on="participant_id", how="outer")
     df_master.to_csv(
-        "/research/cisc2/projects/critchley_adie/BIDS_data/participants2.tsv"
+        "/research/cisc2/projects/critchley_adie/BIDS_data/participants.tsv",
+        index=False, sep="\t"
     )
