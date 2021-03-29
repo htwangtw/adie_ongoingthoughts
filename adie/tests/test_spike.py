@@ -7,6 +7,7 @@ from adie.tests import get_test_data_path
 
 test_file = os.path.join(get_test_data_path(), "file.smr")
 
+
 def test_smr2array():
     out = smr2array(test_file)
     assert type(out) == tuple
