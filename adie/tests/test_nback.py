@@ -3,12 +3,30 @@ import pandas as pd
 
 import pytest
 
-from adie.nback import read_log, extract_stimtype, compile_probes, compile_performance, compile_ses
+from adie.nback import (
+    read_log,
+    extract_stimtype,
+    compile_probes,
+    compile_performance,
+    compile_ses,
+)
 from adie.tests import get_test_data_path
 
 
-testdata = Path(get_test_data_path()) / "sub-999_ses-baseline_task-nbackmindwandering_beh.tsv"
-mwq = ["StimIndex", 'nBack', 'fixStart', 'stimStart', 'mwType', 'keyResp', 'respRT']
+testdata = (
+    Path(get_test_data_path())
+    / "sub-999_ses-baseline_task-nbackmindwandering_beh.tsv"
+)
+mwq = [
+    "StimIndex",
+    "nBack",
+    "fixStart",
+    "stimStart",
+    "mwType",
+    "keyResp",
+    "respRT",
+]
+
 
 def test_nback():
     data = read_log(testdata)
@@ -21,7 +39,7 @@ def test_nback():
 
     sliced = extract_stimtype(data, "MWQ", mwq)
     assert len(mwq) == 7  # original input ketp un changed
-    assert sliced.shape[1] == 9 # subject id and sesstion
+    assert sliced.shape[1] == 9  # subject id and sesstion
 
     probes = compile_probes(data)
     assert probes.shape[0] == 12

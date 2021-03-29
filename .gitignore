@@ -1,5 +1,5 @@
 test/data/bids_test/derivatives/*
-
+**/.DS_Store
 # editor
 .vscode
 .*.sw?
@@ -148,3 +148,8 @@ dmypy.json
 
 # libreoffice lockfile
 *.~lock*
+
+# bash profile
+
+.bash_profile
+bashrc

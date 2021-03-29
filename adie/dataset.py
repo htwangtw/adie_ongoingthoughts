@@ -15,10 +15,11 @@ session_check = {
     "BL": "baseline",
     "F": "oneweek",
     "3mf": "threemonth",
-    "FY": "oneyear"
-    }
+    "FY": "oneyear",
+}
 
 physio_labels = ["ecg", "respiratory", "cardiac"]
+
 
 def parseinfo(info: str) -> (str, str, str):
     """
@@ -42,9 +43,12 @@ def parseinfo(info: str) -> (str, str, str):
     return sub, session, group
 
 
-def gen_bidsbeh(bidsroot: Path or str,
-                sub: str, session: str = None,
-                derivative: str = None) -> (Path, str):
+def gen_bidsbeh(
+    bidsroot: Path or str,
+    sub: str,
+    session: str = None,
+    derivative: str = None,
+) -> (Path, str):
     """
     Generate behavioural data file path
 
@@ -65,7 +69,7 @@ def gen_bidsbeh(bidsroot: Path or str,
         BIDS subject directory and BIDS subject file base name
     """
 
-    if type(bidsroot) ==str:
+    if type(bidsroot) == str:
         bidsroot = Path(bidsroot)
 
     if session:
@@ -86,8 +90,10 @@ def gen_bidsbeh(bidsroot: Path or str,
         os.makedirs(new_sub)
     return new_sub, base_name
 
-def convert_beh(original: Path, target: Path,
-               basename: str, label: str) -> Path:
+
+def convert_beh(
+    original: Path, target: Path, basename: str, label: str
+) -> Path:
     """
     save general behavioural data to BIDS spec beh file
     """
@@ -97,7 +103,7 @@ def convert_beh(original: Path, target: Path,
     else:
         print("convert to BIDS")
         df = pd.read_csv(original, header=0)
-        df.to_csv(target / target_file, sep= "\t", index=False)
+        df.to_csv(target / target_file, sep="\t", index=False)
     return target / target_file
 
 
@@ -124,7 +130,9 @@ def name_physiobids(basename: str, task: str, signal_info: list) -> list:
         recording = d["Columns"][0]
         if recording in physio_labels:
             suffix = "physio"
-            physio_basename = f"{basename}_task-{task}_recording-{recording}_{suffix}"
+            physio_basename = (
+                f"{basename}_task-{task}_recording-{recording}_{suffix}"
+            )
         else:
             suffix = "stim"
             physio_basename = f"{basename}_task-{task}_{suffix}"
@@ -132,8 +140,9 @@ def name_physiobids(basename: str, task: str, signal_info: list) -> list:
     return names
 
 
-def save_physio(target: Path, basename: str, task: str,
-                smr_file: Path) -> list:
+def save_physio(
+    target: Path, basename: str, task: str, smr_file: Path
+) -> list:
     """
     save converted spike physio data to BIDS spec beh file
 
@@ -159,16 +168,21 @@ def save_physio(target: Path, basename: str, task: str,
     for n, d, s in zip(bidsnames, signal_info, signals):
         s = pd.DataFrame(s, index=None, columns=d["Columns"])
         s.to_csv(target / f"{n}.tsv.gz", sep="\t", compression="gzip")
-        with open(target / f"{n}.json", 'w') as f:
-                json.dump(d, f, indent=2)
+        with open(target / f"{n}.json", "w") as f:
+            json.dump(d, f, indent=2)
         saved.append(str(target / f"{n}"))
 
     return saved
 
-def smr_derivative(origin: Path, bidsroot: Path or str,
-                sub: str, task: str, recording: str,
-                session: str = None,
-                ) -> Path:
+
+def smr_derivative(
+    origin: Path,
+    bidsroot: Path or str,
+    sub: str,
+    task: str,
+    recording: str,
+    session: str = None,
+) -> Path:
     """
     organise the smr files in BIDS for people who
     prefer to use original spike files
@@ -190,7 +204,9 @@ def smr_derivative(origin: Path, bidsroot: Path or str,
         path to the renamed file
     ------
     """
-    target, basename = gen_bidsbeh(bidsroot, sub, session, derivative="physio_smr")
+    target, basename = gen_bidsbeh(
+        bidsroot, sub, session, derivative="physio_smr"
+    )
     target_file = f"{basename}_task-{task}_recording-{recording}_physio.smr"
     copyfile(origin, target / target_file)
     return target / target_file

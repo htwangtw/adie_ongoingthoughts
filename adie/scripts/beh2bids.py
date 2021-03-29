@@ -6,22 +6,50 @@ import click
 import re
 from pathlib import Path
 
-from ..dataset import (parseinfo, gen_bidsbeh,
-            convert_beh, smr_derivative, save_physio)
+from ..dataset import (
+    parseinfo,
+    gen_bidsbeh,
+    convert_beh,
+    smr_derivative,
+    save_physio,
+)
+
 
 @click.command()
-@click.option('--task', '-t',
-    help='Path to task data directory unders sourcedata. (something/someting/taskname)')
-@click.option('--subject', '-s', 'adiesub',
-    help='ADIE subject identifier (ADIE??? / CONADIE??? or suffix with session such as "ADIE???BL")')
-@click.option('--behfile', '-f', 'file_pattern', default="*.csv", show_default=True,
-    help="Behavioural data log file name pattern")
-@click.option('--physio', '-p', default=None, show_default=True,
-    help="physiology recording type, such as ecg, pulseox. Set to None if no physiology data.")
-@click.argument('bids_root', type=click.Path(exists=True))
-
-def main(adiesub: str, task:str , bids_root:str,
-          file_pattern: str, physio:str or None = None):
+@click.option(
+    "--task",
+    "-t",
+    help="Path to task data directory unders sourcedata. (something/someting/taskname)",
+)
+@click.option(
+    "--subject",
+    "-s",
+    "adiesub",
+    help='ADIE subject identifier (ADIE??? / CONADIE??? or suffix with session such as "ADIE???BL")',
+)
+@click.option(
+    "--behfile",
+    "-f",
+    "file_pattern",
+    default="*.csv",
+    show_default=True,
+    help="Behavioural data log file name pattern",
+)
+@click.option(
+    "--physio",
+    "-p",
+    default=None,
+    show_default=True,
+    help="physiology recording type, such as ecg, pulseox. Set to None if no physiology data.",
+)
+@click.argument("bids_root", type=click.Path(exists=True))
+def main(
+    adiesub: str,
+    task: str,
+    bids_root: str,
+    file_pattern: str,
+    physio: str or None = None,
+):
     """
     bids_root: path to the root direcotry of BIDS dataset
 
@@ -42,41 +70,58 @@ def main(adiesub: str, task:str , bids_root:str,
         sub, session, _ = parseinfo(cur_ses)
         sub_path, base_name = gen_bidsbeh(bids_root, sub, session)
 
-        process_beh(cur_ses, file_pattern,
-                source_task, sub_path,
-                base_name, task)
+        process_beh(
+            cur_ses, file_pattern, source_task, sub_path, base_name, task
+        )
 
-        process_smr(cur_ses, bids_root,
-                source_task, sub_path,
-                base_name, task, sub, session, physio)
+        process_smr(
+            cur_ses,
+            bids_root,
+            source_task,
+            sub_path,
+            base_name,
+            task,
+            sub,
+            session,
+            physio,
+        )
     return 0
 
-def process_beh(cur_ses, file_pattern,
-                source_task, sub_path,
-                base_name, task):
+
+def process_beh(cur_ses, file_pattern, source_task, sub_path, base_name, task):
     cur_beh = find_file(cur_ses, file_pattern, source_task)
     if cur_beh != 1:
-        beh_path = convert_beh(cur_beh, sub_path,
-                            base_name, task)
+        beh_path = convert_beh(cur_beh, sub_path, base_name, task)
         click.echo(f"f{beh_path} created")
     else:
         click.echo(f"behavioural file exist")
     return
 
-def process_smr(cur_ses, bids_root,
-                source_task, sub_path,
-                base_name, task, sub, session, physio):
+
+def process_smr(
+    cur_ses,
+    bids_root,
+    source_task,
+    sub_path,
+    base_name,
+    task,
+    sub,
+    session,
+    physio,
+):
     cur_physio = find_file(cur_ses, "*.smr", source_task)
     if physio and cur_physio != 1:
         physio_path = save_physio(sub_path, base_name, task, cur_physio)
         click.echo(f"f{physio_path} created")
 
-        der_smr = smr_derivative(cur_physio, bids_root, sub, task,
-                        session=session, recording=physio)
+        der_smr = smr_derivative(
+            cur_physio, bids_root, sub, task, session=session, recording=physio
+        )
         click.echo(f"f{der_smr} created")
     else:
         click.echo(f"found no smr data")
     return
+
 
 def find_file(cur_ses: str, file_pattern: str, source_task: Path):
     cur_file = list(source_task.rglob(f"**/{cur_ses}/{file_pattern}"))
@@ -84,6 +129,7 @@ def find_file(cur_ses: str, file_pattern: str, source_task: Path):
         return cur_file[0]
     click.echo(f"found none or too many match for {file_pattern} in {cur_ses}")
     return 1
+
 
 def check_session(adiesub: str, source_task: Path):
     task = source_task.name
@@ -98,6 +144,7 @@ def check_session(adiesub: str, source_task: Path):
         click.echo(f"{sub} not in {task}. Wrong subject ADIE ID?")
         return 1
     return session_list
+
 
 if __name__ == "__main__":
     main()
