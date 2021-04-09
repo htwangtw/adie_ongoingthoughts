@@ -24,7 +24,7 @@ virtualenv env -p /path/to/bin/python3.8
 source env/bin/activate
 pip install -r requirements.txt
 # install ADIE data analysis aid
-python install -e .
+pip install -e .
 ```
 After setup for the first time, you need to activate the enviroment to use this project.
 ```
@@ -41,7 +41,7 @@ For developers:
 virtualenv env -p /path/to/bin/python3.8
 source env/bin/activate
 pip install -r dev-requirements.txt
-python install -e .
+pip install -e .
 ```
 
 ## Populate BIDS dataset
