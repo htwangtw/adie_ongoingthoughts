@@ -32,7 +32,7 @@ for idx, sub in enumerate(subs):
     src, dst = migrate.sesmatch(src, dst)
     dir_pairs = migrate.sescreate(src, dst)
     migrate.make_ses_dir(dir_pairs)
-    migrate.make_neuro(dir_pairs)
+    #migrate.make_neuro(dir_pairs)
     migrate.copydirs(dir_pairs)
 
     print(

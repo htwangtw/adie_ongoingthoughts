@@ -107,12 +107,17 @@ def make_neuro(dir_pairs):
 def copydirs(dir_pairs):
     """copy files from source to dest"""
     for k, v in dir_pairs.items():
+
         # copy files inside the session directory, not the session directory itself due to date-based name
         sources = glob.glob(k + "/*")
         destination = v
-        if len(os.listdir(v)) == 0:
+        # only copy if files not previous copies 
+        isin = [os.path.basename(sources[i]) in os.listdir(destination) for i in range(len(sources))]
+        if True not in isin == True: #i.e. if none of the source files are in the destination folder
             print("Copying:", sources, "\n", "to:", destination)
             # copy all files in sources list
             [call(["cp", "-a", "-R", i, destination]) for i in sources]
         else:
-            print("Destination directory not empty", os.listdir(v))
+            print('Not copying as source files in destination directory: {}'.format([os.path.basename(sources[i]) in os.listdir(destination) for i in range(len(sources))]))
+        
+          
