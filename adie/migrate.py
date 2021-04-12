@@ -14,7 +14,6 @@ import os
 import glob
 from subprocess import call
 
-
 def get_paths():
     """retrieve the relevent universal paths"""
     base = "/research/cisc2/projects/critchley_adie/"
@@ -103,21 +102,20 @@ def make_neuro(dir_pairs):
         elif os.path.exists(dir_pairs[k]) == True:
             print("neuro/ already exists")
 
-
 def copydirs(dir_pairs):
     """copy files from source to dest"""
     for k, v in dir_pairs.items():
-
         # copy files inside the session directory, not the session directory itself due to date-based name
         sources = glob.glob(k + "/*")
         destination = v
         # only copy if files not previous copies 
         isin = [os.path.basename(sources[i]) in os.listdir(destination) for i in range(len(sources))]
-        if True not in isin == True: #i.e. if none of the source files are in the destination folder
+        if True not in isin: #i.e. if none of the source files are in the destination folder
             print("Copying:", sources, "\n", "to:", destination)
-            # copy all files in sources list
+            # copy all files in sources lists
             [call(["cp", "-a", "-R", i, destination]) for i in sources]
         else:
+            #print([(os.path.basename(sources[i]) for i in range(len(sources)))])
             print('Not copying as source files in destination directory: {}'.format([os.path.basename(sources[i]) in os.listdir(destination) for i in range(len(sources))]))
         
-          
+            
