@@ -18,7 +18,7 @@ subs = glob.glob(
     "/research/cisc2/projects/critchley_adie/wills_data/bids/sub-*"
 )
 subs = [os.path.basename(i) for i in subs]
-base = "/research/cisc2/projects/critchley_adie/"
+base = "/research/cisc2/projects/critchley_adie/" #make sure this line is universal
 base_src = os.path.join(base, "wills_data/bids/")
 base_dst = os.path.join(base, "BIDS_data/")
 
