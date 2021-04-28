@@ -14,7 +14,6 @@ import os
 import glob
 from subprocess import call
 
-
 def get_paths():
     """retrieve the relevent universal paths"""
     base = "/research/cisc2/projects/critchley_adie/"
@@ -42,11 +41,11 @@ def sesmatch(sub_src, sub_dst):
     """match session level directories"""
     # how many src session dirs
     src_sessions = glob.glob(os.path.join(sub_src, "ses-*"))
-    print(src_sessions)
+    #print(src_sessions)
     ses_dates = [os.path.basename(i) for i in src_sessions]
     # how many dst session dirs
     dst_sessions = glob.glob(os.path.join(sub_dst, "ses-*"))
-    print(dst_sessions)
+    #print(dst_sessions)
     ses_names = [os.path.basename(i) for i in dst_sessions]
 
     print("fMRI sessions: {}".format(ses_dates))
@@ -55,19 +54,45 @@ def sesmatch(sub_src, sub_dst):
     return src_sessions, dst_sessions
 
 
-def sescreate(src_sessions, dst_sessions):
+def sescreate(src_sessions, dst_sessions, sub):
     """create session level destination directorys paths with new label name"""
     # pair up each src session with dst session using dict
     # extract baseline session path
-    baseline_ses = [i for i in dst_sessions if "baseline" in i]
-    try:
-        baseline_ses = baseline_ses[0]
-    # if baseline session path doesn't exist (e.g if no behavioural assessment done at baseline), consruct filepath
-    except:
-        baseline_ses = os.path.join(
-            os.path.dirname(dst_sessions[0]), "baseline"
-        )
-        print("No existing baseline directory - creating one")
+
+    # if no destination sessions exist, create them
+    if len(dst_sessions) == 0: 
+        print ('No dest sessions found! Creating them')
+        newsubdir = os.path.join('/research/cisc2/projects/critchley_adie/BIDS_data/',sub)
+        if os.path.exists(newsubdir) == False:
+            print('CREATING:',os.path.join('/research/cisc2/projects/critchley_adie/BIDS_data/',sub))
+            os.mkdir(newsubdir)
+        else:
+            print('Subject {} dir already exists'.format(sub))
+
+        if len(src_sessions) == 1:
+            print ('Making session:', os.path.join(newsubdir, 'ses-baseline'))
+            baseline_ses = os.path.join(newsubdir, 'ses-baseline')
+            os.mkdir(baseline_ses)         
+            
+        elif len(src_sessions) == 2:
+            print ('Making session:', os.path.join(newsubdir, 'ses-baseline'))
+            baseline_ses = os.path.join(newsubdir, 'ses-baseline')
+            os.mkdir(baseline_ses)    
+
+            print ('Making session', os.path.join(newsubdir, 'posttraining')) 
+            pt_ses = os.path.join(newsubdir, 'posttraining')
+            os.mkdir(pt_ses)
+
+    # if destination sessions (i.e. subject) exists 
+    elif len(dst_sessions) > 0:
+        baseline_ses = [i for i in dst_sessions if "baseline" in i]      
+        try:
+            baseline_ses = baseline_ses[0]
+	# if baseline session path doesn't exist (e.g if no behavioural assessment done at baseline), consruct filepath
+        except:
+            print("No existing baseline directory - creating one")
+            baseline_ses = os.path.join(os.path.dirname(dst_sessions[0]), "ses-baseline")
+            os.mkdir(baseline_ses)
 
     # if there's only one src_session, dst = baseline/
     if len(src_sessions) == 1:
@@ -103,16 +128,20 @@ def make_neuro(dir_pairs):
         elif os.path.exists(dir_pairs[k]) == True:
             print("neuro/ already exists")
 
-
 def copydirs(dir_pairs):
     """copy files from source to dest"""
     for k, v in dir_pairs.items():
         # copy files inside the session directory, not the session directory itself due to date-based name
         sources = glob.glob(k + "/*")
         destination = v
-        if len(os.listdir(v)) == 0:
+        # only copy if files not previous copies 
+        isin = [os.path.basename(sources[i]) in os.listdir(destination) for i in range(len(sources))]
+        if True not in isin: #i.e. if none of the source files are in the destination folder
             print("Copying:", sources, "\n", "to:", destination)
-            # copy all files in sources list
+            # copy all files in sources lists
             [call(["cp", "-a", "-R", i, destination]) for i in sources]
         else:
-            print("Destination directory not empty", os.listdir(v))
+            #print([(os.path.basename(sources[i]) for i in range(len(sources)))])
+            print('Not copying as source files in destination directory: {}'.format([os.path.basename(sources[i]) in os.listdir(destination) for i in range(len(sources))]))
+        
+            

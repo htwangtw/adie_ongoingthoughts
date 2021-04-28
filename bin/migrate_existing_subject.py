@@ -18,7 +18,7 @@ subs = glob.glob(
     "/research/cisc2/projects/critchley_adie/wills_data/bids/sub-*"
 )
 subs = [os.path.basename(i) for i in subs]
-base = "/research/cisc2/projects/critchley_adie/"
+base = "/research/cisc2/projects/critchley_adie/" #make sure this line is universal
 base_src = os.path.join(base, "wills_data/bids/")
 base_dst = os.path.join(base, "BIDS_data/")
 
@@ -27,12 +27,12 @@ for idx, sub in enumerate(subs):
     try:
         src, dst = migrate.submatch(base_src, base_dst, sub)
     except:
-        print(f"error when mating sub dirs {sub}, skip")
+        print("error when matching sub dirs {}, skip".format(sub))
         continue
     src, dst = migrate.sesmatch(src, dst)
-    dir_pairs = migrate.sescreate(src, dst)
+    dir_pairs = migrate.sescreate(src,dst,sub)
     migrate.make_ses_dir(dir_pairs)
-    migrate.make_neuro(dir_pairs)
+    #migrate.make_neuro(dir_pairs)
     migrate.copydirs(dir_pairs)
 
     print(
