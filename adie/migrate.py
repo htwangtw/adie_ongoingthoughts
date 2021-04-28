@@ -57,59 +57,55 @@ def sesmatch(sub_src, sub_dst):
 def sescreate(src_sessions, dst_sessions, sub):
     """create session level destination directorys paths with new label name"""
     # pair up each src session with dst session using dict
-    session_ids = ["baseline", "posttraining"]
-    dir_pairs = {}
-    
-    # I assume you have maximum of two sessions in source and destination
-    assert len(dst_sessions) <= 2 
-    assert len(src_sessions) <= 2 
-    # create subject dir if not exist
-    subdir = os.path.join('/research/cisc2/projects/critchley_adie/BIDS_data/',sub)
-    if not os.path.exists(subdir):
-        print(f'CREATING: {subdir}')
-        os.mkdir(subdir)
-    else:
-        print(f'{sub}: subject dir already exists')
+    # extract baseline session path
 
-    # ensure length of src_session and dst_sessions matches 
-    checked_dst_sessions = []
-    for ses in session_ids[:len(src_session)]:
-        dst = _check_dst(dst_sessions, ses)
-        checked_dst_sessions.append(dst)
-    return {src: dst for src, dst in zip(src_sessions, checked_dst_sessions)}
+    # if no destination sessions exist, create them
+    if len(dst_sessions) == 0: 
+        print ('No dest sessions found! Creating them')
+        newsubdir = os.path.join('/research/cisc2/projects/critchley_adie/BIDS_data/',sub)
+        if os.path.exists(newsubdir) == False:
+            print('CREATING:',os.path.join('/research/cisc2/projects/critchley_adie/BIDS_data/',sub))
+            os.mkdir(newsubdir)
+        else:
+            print('Subject {} dir already exists'.format(sub))
 
+        if len(src_sessions) == 1:
+            print ('Making session:', os.path.join(newsubdir, 'ses-baseline'))
+            baseline_ses = os.path.join(newsubdir, 'ses-baseline')
+            os.mkdir(baseline_ses)         
+            
+        elif len(src_sessions) == 2:
+            print ('Making session:', os.path.join(newsubdir, 'ses-baseline'))
+            baseline_ses = os.path.join(newsubdir, 'ses-baseline')
+            os.mkdir(baseline_ses)    
 
-def _create_dst_ses(subdir, session):
-    """create destination session dir"""
-    dst = os.path.join(subdir, f'ses-{session}')
-    print ('Making session:', dst)
-    os.mkdir(dst)
-    return dst
+            print ('Making session', os.path.join(newsubdir, 'posttraining')) 
+            pt_ses = os.path.join(newsubdir, 'posttraining')
+            os.mkdir(pt_ses)
 
+    # if destination sessions (i.e. subject) exists 
+    elif len(dst_sessions) > 0:
+        baseline_ses = [i for i in dst_sessions if "baseline" in i]      
+        try:
+            baseline_ses = baseline_ses[0]
+	# if baseline session path doesn't exist (e.g if no behavioural assessment done at baseline), consruct filepath
+        except:
+            print("No existing baseline directory - creating one")
+            baseline_ses = os.path.join(os.path.dirname(dst_sessions[0]), "ses-baseline")
+            os.mkdir(baseline_ses)
 
-def _check_dst(dst_sessions, session):
-    """
-    Return destination path for a given session
-    create destination if path not exist.
-    
-    Parameters
-    ----------
-    dst_sessions: list of str or empty list
-        List of BIDS session path in desitination directory
-    
-    session: str
-        Session label.     
-    """
-    current_ses = None
-    for dst in dst_sessions:
-        if session in dst:
-            current_ses = dst
+    # if there's only one src_session, dst = baseline/
+    if len(src_sessions) == 1:
+        dir_pairs = {src_sessions[0]: baseline_ses}
 
-    if not current_ses:
-        print(f"No existing {session} directory - creating one")
-        sub_dir = os.path.dirname(dst_sessions[0])
-        current_ses = _create_dst_ses(subdir, session)
-    return current_ses
+    # if there's two src_sessions, dsts = baseline/ and posttraining/
+    elif len(src_sessions) == 2:
+        # create posttraining dir
+        pt_ses = os.path.join(os.path.dirname(baseline_ses), "posttraining")
+        dir_pairs = {src_sessions[0]: baseline_ses, src_sessions[1]: pt_ses}
+
+    return dir_pairs
+
 
 def make_ses_dir(dir_pairs):
     """make session level directory (if doesn't already exist)"""
